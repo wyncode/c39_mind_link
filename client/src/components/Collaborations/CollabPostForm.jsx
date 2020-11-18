@@ -2,25 +2,22 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const CollabPostForm = () => {
-  const [commentData, setCommentData] = useState('');
-  const initialState = { title: '', text: '' };
-  const [values, setValues] = useState(initialState);
+  const [comment, setComment] = useState('');
 
   const handleChange = (e) => {
-    setCommentData({ ...commentData, [e.target.name]: e.target.value });
+    setComment({ comment, [e.target.name]: e.target.value });
   };
   const handleCommentSubmission = async (e) => {
-    const form = e.target;
     e.preventDefault();
+    const form = e.target;
     try {
       await axios({
         method: 'POST',
         url: '/collaboration/details',
-        data: commentData
+        data: comment
       });
-      setCommentData(null);
+      setComment('null');
       form.reset();
-      console.log(commentData);
     } catch (error) {
       console.log(error);
     }
@@ -53,7 +50,6 @@ const CollabPostForm = () => {
           />
         </div>
         <form onSubmit={handleCommentSubmission}>
-          {/* <label htmlFor="comment">Comment</label> */}
           <input
             id="comment"
             name="comment"
@@ -67,11 +63,10 @@ const CollabPostForm = () => {
       <button
         className="submitButton"
         type="submit"
-        onSubmit={handleCommentSubmission}
+        onClick={handleCommentSubmission}
       >
         Submit
       </button>
-      {/* <div>Time/Date stamp</div> */}
     </div>
   );
 };

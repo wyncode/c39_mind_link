@@ -2,7 +2,6 @@ import React from 'react';
 import CollabHeader from '../components/Collaborations/CollabHeader';
 import CollabInfo from '../components/Collaborations/CollabInfo';
 import CollabPostForm from '../components/Collaborations/CollabPostForm';
-import CollabComments from '../components/Collaborations/CollabPostForm';
 import './CollabDetails.css';
 
 const Collaboration = () => {

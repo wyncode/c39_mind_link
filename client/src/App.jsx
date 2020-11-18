@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { AppContextProvider } from './context/AppContext';
 // import ContextDemo from './components/ContextDemo';
 import ArtistPage from './Pages/ArtistPage';
