@@ -1,14 +1,10 @@
 import React from 'react';
-import CollabHeader from '../components/Collaborations/CollabHeader';
-import CollabInfo from '../components/Collaborations/CollabInfo';
-import CollabComments from '../components/Collaborations/CollabComments';
+import CollabCards from '../components/Collaborations/CollabCards';
 
 const Collaboration = () => {
   return (
     <div>
-      <CollabHeader />
-      <CollabInfo />
-      <CollabComments />
+      <CollabCards />
     </div>
   );
 };

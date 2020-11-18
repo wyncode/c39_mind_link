@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CollabInfo = () => {
-  return <div>Collab CollabInfo</div>;
+  return <div>Collab Info</div>;
 };
 
 export default CollabInfo;
