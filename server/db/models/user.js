@@ -61,6 +61,12 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// userSchema.virtual('tasks', {
+//   ref: 'Task',
+//   localField: '_id',
+//   foreignField: 'owner'
+// });
+
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();
@@ -72,7 +78,7 @@ userSchema.methods.toJSON = function () {
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign(
-    { _id: user._id.toString(), name: user.name },
+    { _id: user._id.toString(), name: user.firstName },
     process.env.JWT_SECRET,
     { expiresIn: '24h' }
   );
@@ -82,6 +88,20 @@ userSchema.methods.generateAuthToken = async function () {
 
   return token;
 };
+
+userSchema.statics.findByCredentials = async (artistName, password) => {
+  const user = await User.findOne({ artistName });
+  if (!user) throw new Error('Unable to log in.');
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) throw new Error('Unable to login.');
+  return user;
+};
+
+userSchema.pre('save', async function (next) {
+  const user = this;
+  if (user.isModified('password'))
+    user.password = await bcrypt.hash(user.password, 8);
+});
 
 const User = mongoose.model('User', userSchema);
 
