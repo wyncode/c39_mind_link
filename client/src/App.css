@@ -1,4 +1,4 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
+/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE
 
 #demo {
   width: 100vw;
@@ -8,4 +8,11 @@
   align-items: center;
 }
 
-/* END DEMO */
+END DEMO */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
