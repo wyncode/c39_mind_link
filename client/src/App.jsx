@@ -5,7 +5,6 @@ import Home from './Pages/HomePage';
 import CollabPage from './Pages/CollabPage';
 import CollabDetails from './Pages/CollabDetails';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
 import './App.css';
 import ResetPassword from './Pages/ResetPassword';
 
