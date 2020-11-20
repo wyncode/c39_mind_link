@@ -3,17 +3,16 @@ import React, { createContext, useState } from 'react';
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
-  const [contextMessage, setContextMessage] = useState('');
-
-  const contextMethod = () => {
-    setContextMessage('Hello from client/src/context/AppContext.jsx');
-  };
+  const [currentUser, setCurrentUser] = useState(null);
+  const [comment, setComment] = useState([]);
 
   return (
     <AppContext.Provider
       value={{
-        contextMessage,
-        contextMethod
+        currentUser,
+        setCurrentUser,
+        comment,
+        setComment
       }}
     >
       {children}

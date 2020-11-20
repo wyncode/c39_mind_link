@@ -1,11 +1,12 @@
-const router = require('express').Router();
+const router = require('express').Router(),
+  { createUser, loginUser } = require('../../controllers/users'),
+  { postComment } = require('../../controllers/comments');
 
-// JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
-router.get('/api/demo', (request, response) => {
-  response.json({
-    message: 'Hello from server.js'
-  });
-});
-// END DEMO
+router.post('/', createUser);
+router.post('/login', loginUser);
+
+require('../../controllers/comments');
+
+router.post('/collaboration/details', postComment);
 
 module.exports = router;
