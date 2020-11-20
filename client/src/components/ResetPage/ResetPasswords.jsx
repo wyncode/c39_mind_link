@@ -1,7 +1,7 @@
 import React from 'react';
 import './ResetPasswords.css';
 
-const resetpasswords = () => {
+const ResetPasswords = () => {
   return (
     <div className="container">
       <form>
@@ -14,6 +14,6 @@ const resetpasswords = () => {
   );
 };
 
-export default resetpasswords;
+export default ResetPasswords;
 
 //left off here 11-20-2020 1:00am
