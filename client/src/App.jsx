@@ -7,6 +7,8 @@ import CollabDetails from './Pages/CollabDetails';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import ResetPassword from './Pages/ResetPassword';
+import SignUpPage from './Pages/SignUpPage';
+import LoginPage from './Pages/LoginPage';
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/sign-up" component={SignUpPage} />
+          <Route exact path="/login" component={LoginPage} />
           <Route exact path="/api/users/profile" component={ArtistPage} />
           <Route exact path="/api/users/collaboration" component={CollabPage} />
           <Route exact path="api/resetpassword" component={ResetPassword} />
