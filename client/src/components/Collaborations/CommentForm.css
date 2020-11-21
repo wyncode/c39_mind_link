@@ -6,7 +6,7 @@
 #commentContainer {
   display: flex;
   align-items: top;
-  /* background-color: #0a0a4d; */
+  background-color: #0a0a4d;
 }
 
 #comment {

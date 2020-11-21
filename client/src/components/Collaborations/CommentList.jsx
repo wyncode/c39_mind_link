@@ -41,10 +41,8 @@ const CommentList = () => {
     // ))}
     <div>
       <CommentForm />
-      <div id="postBox">
-        Sample Text
-        <Comment />
-      </div>
+      <Comment />
+      {/* <div id="postBox">Sample Text</div> */}
       {/* {Comment.comment}
       {Comment} */}
       {/* <CommentForm /> */}
