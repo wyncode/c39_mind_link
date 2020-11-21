@@ -1,0 +1,22 @@
+#postContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.postAvatar {
+  width: 35px;
+  height: 35px;
+  margin: 25px 5px 0px 15px;
+  border-radius: 2px;
+}
+#postBox {
+  min-height: 50px;
+  color: white;
+  background-color: #0a0a4d;
+  width: 55vw;
+  border-radius: 2px;
+  border: none;
+  margin: 15px;
+  margin: 25px 15px 15px 15px;
+  text-align: top;
+}

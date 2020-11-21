@@ -1,4 +1,44 @@
-.cHeader {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+#top {
   width: 100vw;
-  height: 100px;
+  /* height: 100px; */
+  /* margin-bottom: 300px; */
+}
+
+#picAndInfoContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+#picContainer {
+  width: 67%;
+  height: 40px;
+}
+
+#projectPic {
+  width: 65vw;
+  height: 25rem;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+#infoContainer {
+  width: 20%;
+  height: 21rem;
+  font-family: 'Roboto', sans-serif;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+#pName {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+#descFromDB {
+  font-size: 13px;
+  margin-top: 1rem;
 }

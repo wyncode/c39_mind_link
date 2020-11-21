@@ -1,6 +1,12 @@
+#postContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 #commentContainer {
   display: flex;
   align-items: top;
+  background-color: #0a0a4d;
 }
 
 #comment {
@@ -17,4 +23,11 @@
   height: 35px;
   margin: 15px 5px 0px 15px;
   border-radius: 2px;
+}
+
+.submitButton {
+  border-radius: 2px;
+  border: none;
+  float: right;
+  margin: 0px 15px 5px 0px;
 }

@@ -14,12 +14,12 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/profile" component={ArtistPage} />
-          <Route exact path="/collaboration" component={CollabPage} />
-          <Route exact path="/resetpassword" component={ResetPassword} />
+          <Route exact path="/api/users/profile" component={ArtistPage} />
+          <Route exact path="/api/users/collaboration" component={CollabPage} />
+          <Route exact path="api/resetpassword" component={ResetPassword} />
           <Route
             exact
-            path="/collaboration/details"
+            path="/api/users/collaboration/details"
             component={CollabDetails}
           />
         </Switch>
