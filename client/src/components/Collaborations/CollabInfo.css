@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  margin-right: 2rem;
+  padding: 2rem;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  /* border-radius: 4px; */
+}
+.iBoxHeader {
+  /* background-color: purple; */
+  width: 90%;
+  height: 2rem;
+}
+.iBoxContent {
+  /* background-color: lavender; */
+  width: 90%;
+  height: 12rem;
+}
