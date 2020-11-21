@@ -1,12 +1,17 @@
 const router = require('express').Router(),
-  { createUser, loginUser } = require('../../controllers/users'),
-  { postComment } = require('../../controllers/comments');
+  { postComment, getComment } = require('../../controllers/comments'),
+  {
+    postCollaboration,
+    getCollaboration
+  } = require('../../controllers/collabPost'),
+  { createUser, loginUser } = require('../../controllers/users');
+require('../../controllers/comments');
 
 router.post('/', createUser);
 router.post('/login', loginUser);
-
-require('../../controllers/comments');
-
-router.post('/collaboration/details', postComment);
+router.post('/api/users/collaboration', postCollaboration);
+router.get('/api/users/collaboration', getCollaboration);
+router.post('/api/users/collaboration/details', postComment);
+router.get('/api/users/collaboration/details', getComment);
 
 module.exports = router;
