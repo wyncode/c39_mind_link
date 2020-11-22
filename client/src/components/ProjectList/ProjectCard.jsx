@@ -1,8 +1,7 @@
 import React from 'react';
-import './CollabCard';
-import './CollabCard.css';
+import './ProjectCard.css';
 
-const CollabCard = () => {
+const ProjectCard = () => {
   return (
     <div>
       <div id="projectCardContainer">
@@ -22,4 +21,4 @@ const CollabCard = () => {
   );
 };
 
-export default CollabCard;
+export default ProjectCard;

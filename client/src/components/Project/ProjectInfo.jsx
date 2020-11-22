@@ -1,20 +1,24 @@
 import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
+import './ProjectInfo.css';
 
 const ProjectInfo = () => {
   const { collabPost, setCollabPost } = useContext(AppContext);
+
   useEffect(() => {
+    // this route does not exist yet
+    // but will be created with a follow up PR
     axios
-      .get('/collaboration')
+      .get('/api/projects/:id')
       .then((response) => {
         setCollabPost(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [collabPost, setCollabPost]);
-  console.log(collabPost);
+  }, []);
+
   return (
     <div>
       <div className="infoBox">

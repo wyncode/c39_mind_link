@@ -5,7 +5,9 @@ const express = require('express'),
   passport = require('./middleware/authentication/index'),
   path = require('path'),
   openRoutes = require('./routes/open'),
-  userRouter = require('./routes/secure/users');
+  userRouter = require('./routes/secure/users'),
+  projectRouter = require('./routes/secure/projects'),
+  commentRouter = require('./routes/secure/comments');
 
 //Middleware
 app.use(express.json());
@@ -22,6 +24,8 @@ if (process.env.NODE_ENV === 'production') {
 // Any authentication middleware and related routing would be here.
 app.use('/api/*', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
+app.use('/api/projects', projectRouter);
+app.use('/api/comments', commentRouter);
 
 // Handle React routing, return all requests to React app
 if (process.env.NODE_ENV === 'production') {

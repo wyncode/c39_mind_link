@@ -1,11 +1,9 @@
-import axios from 'axios';
-import React from 'react';
-import { useEffect } from 'react';
-// import CommentForm from './CommentForm';
-
-import { useContext } from 'react';
-
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
+import axios from 'axios';
+import CommentForm from './CommentForm';
+import Comment from './Comment';
+import './CommentList.css';
 
 // useEffect(()=> {
 //   Axios.get('/api/users/collaboration/details')
@@ -18,27 +16,29 @@ import { AppContext } from '../../context/AppContext';
 // return comment.comment.toLowerCase().includes(search.toLowerCase());
 // });
 // return comment.description.toLowerCase().includes(search.toLowerCase());
-const Comment = () => {
-  const { commentList, setCommentList } = useContext(AppContext);
+
+const CommentList = () => {
+  const { comments, setComments } = useContext(AppContext);
+
   useEffect(() => {
     axios
-      .get('/api/users/collaboration/details')
+      .get('/api/comments')
       .then((response) => {
-        setCommentList(response.data);
+        setComments(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [commentList, setCommentList]);
-  console.log(commentList);
+  }, []);
+
   return (
-    <>
-      <div>
-        <div></div>
-        <>{/* <CommentForm comment={comments} /> */}</>
-      </div>
-    </>
+    <div>
+      <CommentForm />
+      {comments.map((comment) => (
+        <Comment key={comment._id} comment={comment} />
+      ))}
+    </div>
   );
 };
 
-export default Comment;
+export default CommentList;

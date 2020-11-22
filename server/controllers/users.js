@@ -36,12 +36,15 @@ exports.loginUser = async (req, res) => {
   const { artistName, password } = req.body;
   try {
     const user = await User.findByCredentials(artistName, password);
+
     const token = await user.generateAuthToken();
+
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
       secure: process.env.NODE_ENV !== 'production' ? false : true
     });
+
     res.json(user);
   } catch (error) {
     res.status(400).json({ error: error.message });

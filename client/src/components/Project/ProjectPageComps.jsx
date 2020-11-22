@@ -1,12 +1,7 @@
 import React from 'react';
-import ProjectHeader from '../Projects/ProjectHeader';
-import ProjectInfo from '../Projects/ProjectInfo';
-import CommentList from '../Projects/CommentList';
-import '../Projects/ProjectInfo.css';
-import '../Projects/ProjectHeader.css';
-import '../Projects/CommentList.css';
-import '../Projects/CommentForm.css';
-import '../Projects/Comment.css';
+import ProjectHeader from './ProjectHeader';
+import ProjectInfo from './ProjectInfo';
+import CommentList from './CommentList';
 import './ProjectPageComps.css';
 
 const ProjectPageComps = () => {

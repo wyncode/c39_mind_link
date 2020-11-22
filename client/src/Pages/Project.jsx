@@ -1,6 +1,5 @@
 import React from 'react';
-import ProjectPageComps from '../components/Projects/ProjectPageComps';
-import '../components/Projects/ProjectPageComps.css';
+import ProjectPageComps from '../components/Project/ProjectPageComps';
 
 const ProjectPage = () => {
   return (
