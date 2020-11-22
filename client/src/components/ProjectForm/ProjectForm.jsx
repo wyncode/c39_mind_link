@@ -2,25 +2,28 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 
-const CreateCollabForm = () => {
+const emptyFormState = {
+  projectName: '',
+  projectDesc: '',
+  audition: '',
+  status: '',
+  started: '',
+  talentNeeded: '',
+  genre: '',
+  mood: '',
+  avatar: '',
+  mindLinkProfile: ''
+};
+
+const ProjectForm = () => {
   const { setLoading } = useContext(AppContext);
 
-  const [collabFormData, setCollabFormData] = useState({
-    // projectName: '',
-    // projectDesc: '',
-    // audition: '',
-    // status: '',
-    // started: '',
-    // talentNeeded: '',
-    // genre: '',
-    // mood: '',
-    // avatar: '',
-    // mindLinkProfile: ''
-  });
+  const [collabFormData, setCollabFormData] = useState(emptyFormState);
 
   const handleChange = (field) => (evt) => {
     setCollabFormData({ ...collabFormData, [field]: evt.target.value });
   };
+
   const handleSubmit = async (e) => {
     const form = e.target;
     setLoading(true);
@@ -28,14 +31,15 @@ const CreateCollabForm = () => {
     try {
       await axios({
         method: 'POST',
-        url: '/api/users/collaboration/create',
+        url: '/api/projects',
         data: collabFormData
       });
-      setCollabFormData(null);
-      setLoading(false);
+      setCollabFormData(emptyFormState);
       form.reset();
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -192,4 +196,4 @@ const CreateCollabForm = () => {
   );
 };
 
-export default CreateCollabForm;
+export default ProjectForm;

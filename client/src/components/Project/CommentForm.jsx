@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
+import './CommentForm.css';
 
 const CommentForm = () => {
   const [commentData, setCommentData] = useState({});
@@ -16,15 +17,15 @@ const CommentForm = () => {
     try {
       await axios({
         method: 'POST',
-        url: '/collaboration/details',
+        url: '/api/comments',
         data: commentData
       });
 
-      // setCommentData(e.target);
-      setLoading(false);
       form.reset();
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 

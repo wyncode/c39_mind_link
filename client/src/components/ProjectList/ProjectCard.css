@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+#projectCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#projectCardAvatar {
+  width: 333px;
+  height: 333px;
+}
+
+#projectCardName {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: 7px 5px;
+  font-weight: bolder;
+}
+#projectCardDesc {
+  font-family: 'Raleway', sans-serif;
+  margin: 7px 5px;
+}
+#projectCardOwner {
+  font-family: 'Raleway', sans-serif;
+  margin: 7px 5px;
+}
+#projectCardLink {
+  font-family: 'Raleway', sans-serif;
+  margin: 7px 5px;
+}
