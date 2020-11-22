@@ -5,9 +5,9 @@ const router = require('express').Router(),
 
 router.post('/', postProject);
 router.post('/login', loginUser);
-router.post('/api/users/createproject', createUser);
-router.get('/api/users/collaboration', getProject);
-router.post('/api/users/collaboration/details', postComment);
-router.get('/api/users/collaboration/details', getComment);
+router.post('/createUser', createUser);
+router.get('/collaboration', getProject);
+router.post('/collaboration/details', postComment);
+router.get('/collaboration/details', getComment);
 
 module.exports = router;

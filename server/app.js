@@ -11,7 +11,7 @@ const express = require('express'),
 app.use(express.json());
 
 // Unauthenticated routes
-app.use('/api/users', openRoutes);
+app.use('/api', openRoutes);
 app.use(cookieParser());
 
 // Serve any static files
