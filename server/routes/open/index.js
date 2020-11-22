@@ -1,16 +1,12 @@
 const router = require('express').Router(),
   { postComment, getComment } = require('../../controllers/comments'),
-  {
-    postCollaboration,
-    getCollaboration
-  } = require('../../controllers/collabPost'),
+  { postProject, getProject } = require('../../controllers/projects'),
   { createUser, loginUser } = require('../../controllers/users');
-require('../../controllers/comments');
 
-router.post('/', createUser);
+router.post('/', postProject);
 router.post('/login', loginUser);
-router.post('/api/users/collaboration', postCollaboration);
-router.get('/api/users/collaboration', getCollaboration);
+router.post('/api/users/createproject', createUser);
+router.get('/api/users/collaboration', getProject);
 router.post('/api/users/collaboration/details', postComment);
 router.get('/api/users/collaboration/details', getComment);
 

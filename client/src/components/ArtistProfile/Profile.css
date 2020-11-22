@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Audiowide&family=Roboto&display=swap');
 
-.greyBar {
+.profileGreyBar {
   width: 100vw;
   height: 205px;
   background-color: #575757;
@@ -32,13 +32,13 @@
   font-weight: bold;
 }
 
-.buttons {
+.profileButtons {
   display: flex;
   justify-content: center;
   /* width: 25vw; */
 }
 
-.button {
+.profileButton {
   color: whitesmoke;
   background-color: #575757;
   padding: 0px 30px;

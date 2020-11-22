@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 
-const CollabInfo = () => {
+const ProjectInfo = () => {
   const { collabPost, setCollabPost } = useContext(AppContext);
   useEffect(() => {
     axios
@@ -29,4 +29,4 @@ const CollabInfo = () => {
   );
 };
 
-export default CollabInfo;
+export default ProjectInfo;
