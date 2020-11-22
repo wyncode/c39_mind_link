@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CollabHeader = () => {
+const ProjectHeader = () => {
   return (
-    <div id="top">
+    <div id="headerTop">
       <div id="picAndInfoContainer">
         <div id="picContainer">
           <img
@@ -31,4 +31,4 @@ const CollabHeader = () => {
   );
 };
 
-export default CollabHeader;
+export default ProjectHeader;

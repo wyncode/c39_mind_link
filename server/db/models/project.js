@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const collabPostSchema = new mongoose.Schema(
+const projectSchema = new mongoose.Schema(
   {
     projectName: { type: String, required: true },
     projectDescription: { type: String, required: true },
@@ -17,6 +17,6 @@ const collabPostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const CollabPost = mongoose.model('CollabPost', collabPostSchema);
+const Project = mongoose.model('Project', projectSchema);
 
-module.exports = CollabPost;
+module.exports = Project;

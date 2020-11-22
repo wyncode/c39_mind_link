@@ -3,17 +3,17 @@ import React from 'react';
 const Profile = () => {
   return (
     <div>
-      <div class="greyBar"></div>
+      <div className="profileGreyBar"></div>
       <div id="profilecontainer">
         <div id="profilecircle"></div>
         <div id="profilename">
           <p>ARTIST NAME</p>
         </div>
-        <div className="buttons">
-          <button className="button" id="musicbutton">
+        <div className="profileButtons">
+          <button className="profileButton" id="musicbutton">
             MUSIC
           </button>
-          <button className="button" id="videosbutton">
+          <button className="profileButton" id="videosbutton">
             VIDEOS
           </button>
         </div>

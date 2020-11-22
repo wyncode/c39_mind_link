@@ -3,11 +3,11 @@ import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 
 const CommentForm = () => {
-  const [commentData, setCommentData] = useState(null);
+  const [commentData, setCommentData] = useState({});
   const { setLoading } = useContext(AppContext);
 
-  const handleChange = (e) => {
-    setCommentData({ ...commentData, [e.target.name]: e.target.value });
+  const handleChange = (field) => (evt) => {
+    setCommentData({ ...commentData, [field]: evt.target.value });
   };
   const handleCommentSubmission = async (e) => {
     const form = e.target;
@@ -20,7 +20,7 @@ const CommentForm = () => {
         data: commentData
       });
 
-      setCommentData(e.target);
+      // setCommentData(e.target);
       setLoading(false);
       form.reset();
     } catch (error) {
@@ -30,7 +30,7 @@ const CommentForm = () => {
 
   return (
     <div>
-      <div id="postContainer">
+      <div id="postContainer2">
         <div id="commentContainer">
           <div>
             <img
@@ -43,14 +43,20 @@ const CommentForm = () => {
             <form onSubmit={handleCommentSubmission}>
               <form>
                 <input
-                  id="comment"
-                  name="comment"
+                  id="formComment"
+                  name="formComment"
                   type="text"
                   placeholder="Enter your comment here..."
                   required={true}
-                  onChange={handleChange}
-                  //try out line below, after finding a way to bring comment in
-                  // value={comment.comment}
+                  onChange={handleChange('formComment')}
+                />
+                <input
+                  id="formName"
+                  name="formName"
+                  type="text"
+                  placeholder="Name"
+                  required={true}
+                  onChange={handleChange('name')}
                 />
               </form>
               <div>
