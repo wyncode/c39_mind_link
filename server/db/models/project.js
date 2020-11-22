@@ -11,7 +11,7 @@ const projectSchema = new mongoose.Schema(
     talentNeeded: { type: String, required: true },
     genre: { type: String, required: true },
     mood: { type: String, required: true },
-    avatar: { type: String, required: true },
+    projectAvatar: { type: String, required: true },
     mindlinkpProfile: { type: String }
   },
   { timestamps: true }
