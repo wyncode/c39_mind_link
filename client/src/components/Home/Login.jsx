@@ -1,25 +1,17 @@
 import React from 'react';
-import './Signup.css';
+import './Login.css';
 
-const Signup = () => {
+const Login = () => {
   return (
     <>
-      <div className="signupContainer">
+      <div className="loginContainer">
         <div className="FormWrap">
           <div to="/" className="logo">
             Mind-Link
           </div>
           <div className="FormContent">
             <form className="Form" action="#">
-              <h1 className="FormH1">Create Your Account!</h1>
-              <label className="FormLabel" htmlFor="for">
-                Artist Name
-              </label>
-              <input className="FormInput" type="name" required />
-              <label className="FormLabel" htmlFor="for">
-                Name
-              </label>
-              <input className="FormInput" type="name" required />
+              <h1 className="FormH1">Login to your account</h1>
               <label className="FormLabel" htmlFor="for">
                 Email
               </label>
@@ -40,4 +32,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

@@ -1,20 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import '../App.css';
 import HeroSection from '../components/Home/HeroSection';
+import HowItWorks from '../components/Home/HowItWorks';
 import Navbar from '../components/NavBar/Navbar';
 
-// Need to route Navbar links to correct location
+// Need help doing the routes and links properly
 
 const Home = () => {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={HeroSection} />
-        </Switch>
-      </Router>
+      <Navbar />
+      <HeroSection />
+      <HowItWorks />
     </>
   );
 };
