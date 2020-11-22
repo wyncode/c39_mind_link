@@ -1,12 +1,11 @@
 import React from 'react';
 import { AppContextProvider } from './context/AppContext';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ArtistPage from './Pages/ArtistPage';
 import Home from './Pages/HomePage';
 import CollabPage from './Pages/CollabPage';
 import CreateCollabPage from './Pages/CreateCollabPage';
 import ProjectPage from './Pages/ProjectPage';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import './App.css';
 import ResetPassword from './Pages/ResetPassword';
 import SignUpPage from './Pages/SignUpPage';
 import LoginPage from './Pages/LoginPage';
