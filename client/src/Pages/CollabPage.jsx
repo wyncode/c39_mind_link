@@ -1,10 +1,10 @@
 import React from 'react';
-import CollabCards from '../components/Collaborations/CollabCard';
+import CollabCardList from '../components/Collaborations/CollabCardList';
 
 const Collaboration = () => {
   return (
     <div>
-      <CollabCards />
+      <CollabCardList />
     </div>
   );
 };
