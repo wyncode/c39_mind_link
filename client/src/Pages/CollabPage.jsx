@@ -1,5 +1,5 @@
 import React from 'react';
-import CollabCards from '../components/Collaborations/CollabCards';
+import CollabCards from '../components/Collaborations/CollabCard';
 
 const Collaboration = () => {
   return (
