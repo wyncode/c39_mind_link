@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 #postContainer2 {
   display: flex;
   flex-direction: column;
@@ -7,9 +9,16 @@
   display: flex;
   align-items: top;
   background-color: #0a0a4d;
+  width: 60vw;
+  padding: 25px;
+  margin: 7px;
 }
-
+#commentFormContainer {
+  display: flex;
+  flex-direction: column;
+}
 #comment {
+  font-family: 'Raleway', sans-serif;
   width: 55vw;
   height: 35px;
   border-radius: 2px;
@@ -21,13 +30,15 @@
 .commentAvatar {
   width: 35px;
   height: 35px;
-  margin: 15px 5px 0px 15px;
+  margin: 7px 15px 0px 15px;
   border-radius: 2px;
 }
 
 .submitButton {
-  border-radius: 2px;
+  border-radius: 7px;
+  padding: 2px 4px;
   border: none;
   float: right;
   margin: 0px 15px 5px 0px;
+  font-family: 'Raleway', sans-serif;
 }

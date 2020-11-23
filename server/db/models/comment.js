@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-// moment = require('moment');
 
 const commentSchema = new mongoose.Schema(
   {
     comment: { type: String },
-    name: { type: String }
+    name: { type: String },
+    avatar: { type: String }
   },
   { timestamps: true }
 );
