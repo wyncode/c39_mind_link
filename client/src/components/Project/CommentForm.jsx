@@ -40,33 +40,27 @@ const CommentForm = () => {
               alt="avatar"
             />
           </div>
-          <div>
-            <form onSubmit={handleCommentSubmission}>
-              <form>
-                <input
-                  id="formComment"
-                  name="formComment"
-                  type="text"
-                  placeholder="Enter your comment here..."
-                  required={true}
-                  onChange={handleChange('formComment')}
-                />
-                <input
-                  id="formName"
-                  name="formName"
-                  type="text"
-                  placeholder="Name"
-                  required={true}
-                  onChange={handleChange('name')}
-                />
-              </form>
+
+          <form onSubmit={handleCommentSubmission}>
+            <div id="commentFormContainer">
+              <textarea
+                id="formComment"
+                name="formComment"
+                type="text"
+                rows="3"
+                cols="120"
+                placeholder="Enter your comment here..."
+                required={true}
+                onChange={handleChange('formComment')}
+              />
+
               <div>
                 <button className="submitButton" type="submit">
                   Submit
                 </button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

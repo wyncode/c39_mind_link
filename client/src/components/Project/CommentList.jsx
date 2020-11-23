@@ -34,9 +34,10 @@ const CommentList = () => {
   return (
     <div>
       <CommentForm />
-      {comments.map((comment) => (
+      <Comment />
+      {/* {comments.map((comment) => (
         <Comment key={comment._id} comment={comment} />
-      ))}
+      ))} */}
     </div>
   );
 };
