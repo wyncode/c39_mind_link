@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 
+import Navbar from '../NavBar/Navbar';
+
 const emptyFormState = {
   projectName: '',
   projectDesc: '',
@@ -45,6 +47,7 @@ const ProjectForm = () => {
 
   return (
     <>
+      <Navbar />
       <div className="signupContainer">
         <div className="FormWrap">
           <div to="/" className="logo">

@@ -1,0 +1,25 @@
+.InfoTitle {
+  width: 12vh;
+  display: flex;
+  border: 2px solid black;
+}
+
+.SCbuttons {
+  padding: 50px;
+}
+
+.name {
+  padding: 50px;
+  display: flex;
+  align-content: space-between;
+}
+
+.Email {
+  display: flex;
+  margin: auto;
+  padding: 50px;
+}
+
+.bio {
+  padding: 100px;
+}
