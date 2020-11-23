@@ -23,7 +23,7 @@ client/build
 .env.test.local
 .env.production.local
 .env.sample
-.farah-motes.md
+.farah-notes.md
 
 npm-debug.log*
 yarn-debug.log*
