@@ -1,16 +1,39 @@
 import React from 'react';
 import './ResetPasswords.css';
+import Navbar from '../NavBar/Navbar';
 
 const ResetPasswords = () => {
   return (
-    <div className="container">
-      <form>
-        <h2>Reset Password</h2>
-        <input type="text" placeholder="Artist Name" required />
-        <input type="password" placeholder="New Password" required />
-        <input type="password" placeholder="Confirm Password" required />
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="resetContainer">
+        <div className="FormWrap">
+          <div to="/" className="logo">
+            Mind-Link
+          </div>
+          <div className="FormContent">
+            <form className="Form" action="#">
+              <h1 className="FormH1">Reset Password</h1>
+              <label className="FormLabel" htmlFor="for">
+                Artist Name
+              </label>
+              <input className="FormInput" type="text" required />
+              <label className="FormLabel" htmlFor="for">
+                New Password
+              </label>
+              <input className="FormInput" type="password" required />
+              <label className="FormLabel" htmlFor="for">
+                Confirm Password
+              </label>
+              <input className="FormInput" type="password" required />
+              <button className="FormButton" type="submit">
+                Reset Password
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

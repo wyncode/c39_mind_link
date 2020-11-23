@@ -9,6 +9,7 @@ import Project from './Pages/Project';
 import ResetPassword from './Pages/ResetPassword';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
+import EditProfile from './Pages/EditProfile';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route exact path="/create-project" component={CreateProject} />
           <Route exact path="/reset-password" component={ResetPassword} />
           <Route exact path="/project-details" component={Project} />
+          <Route exact path="/edit-profile" component={EditProfile} />
         </Switch>
       </BrowserRouter>
     </AppContextProvider>

@@ -1,17 +1,15 @@
 import React from 'react';
 import './Signup.css';
-
+import NavBar from '../NavBar/Navbar';
 const Signup = () => {
   return (
     <>
+      <NavBar />
       <div className="signupContainer">
         <div className="FormWrap">
-          <div to="/" className="logo">
-            Mind-Link
-          </div>
           <div className="FormContent">
             <form className="Form" action="#">
-              <h1 className="FormH1">Create Your Account!</h1>
+              <h1 className="FormH1">Create Account</h1>
               <label className="FormLabel" htmlFor="for">
                 Artist Name
               </label>
