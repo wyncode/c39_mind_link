@@ -1,9 +1,11 @@
 import React from 'react';
 import './Login.css';
+import Navbar from '../NavBar/Navbar';
 
 const Login = () => {
   return (
     <>
+      <Navbar />
       <div className="loginContainer">
         <div className="FormWrap">
           <div to="/" className="logo">
@@ -11,17 +13,17 @@ const Login = () => {
           </div>
           <div className="FormContent">
             <form className="Form" action="#">
-              <h1 className="FormH1">Login to your account</h1>
+              <h1 className="FormH1">Login</h1>
               <label className="FormLabel" htmlFor="for">
-                Email
+                Artist Name
               </label>
-              <input className="FormInput" type="email" required />
+              <input className="FormInput" type="text" required />
               <label className="FormLabel" htmlFor="for">
                 Password
               </label>
               <input className="FormInput" type="password" required />
               <button className="FormButton" type="submit">
-                Continue
+                Login
               </button>
               <span className="Text">Forgot Password?</span>
             </form>
