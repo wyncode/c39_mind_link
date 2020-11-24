@@ -19,18 +19,8 @@ const ProjectList = () => {
 
   return (
     <div>
-      {project.map((projectcard) => {
-        return (
-          <ProjectCard
-            key={projectcard._id}
-            id={projectcard._id}
-            image={projectcard.projectAvatar}
-            name={projectcard.projectName}
-            description={projectcard.projectDescription}
-            owner={projectcard.owner}
-            link={projectcard.link}
-          />
-        );
+      {project.map((project) => {
+        return <ProjectCard projectcard={project} />;
       })}
     </div>
   );

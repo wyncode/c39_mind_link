@@ -1,14 +1,15 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
 import swal from 'sweetalert';
 import './Signup.css';
 import NavBar from '../NavBar/Navbar';
 
-const Signup = ({ history }) => {
+const Signup = () => {
   const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState('');
+  const history = useHistory();
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
