@@ -35,15 +35,15 @@ export const EditProfile = () => {
 
 export default EditProfile;
 
-{
-  /* <div className="BasicInfo">
-          Basic Info
-        <input className="First" placeholder="First Name"></input>
+// {
+//   /* <div className="BasicInfo">
+//           Basic Info
+//         <input className="First" placeholder="First Name"></input>
 
-        <input className="First" placeholder="Last Name"></input>
+//         <input className="First" placeholder="Last Name"></input>
 
-        <input className="First" placeholder="Artist Name"></input>
+//         <input className="First" placeholder="Artist Name"></input>
 
-        <input className="First" placeholder="First Name"></input>
-        </div> */
-}
+//         <input className="First" placeholder="First Name"></input>
+//         </div> */
+// }
