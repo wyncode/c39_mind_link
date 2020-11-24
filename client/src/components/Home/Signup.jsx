@@ -1,6 +1,7 @@
 import React from 'react';
 import './Signup.css';
 import NavBar from '../NavBar/Navbar';
+
 const Signup = () => {
   return (
     <>
