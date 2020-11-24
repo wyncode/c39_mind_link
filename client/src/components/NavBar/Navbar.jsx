@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './Button';
+import { LoginButton } from './LoginButton';
 import './Navbar.css';
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [navbar, setNavbar] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -24,9 +25,19 @@ const Navbar = () => {
 
   window.addEventListener('resize', showButton);
 
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={navbar ? 'navbar active' : 'navbar'}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Mind-Link
@@ -64,7 +75,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Login</Button>}
+          {button && (
+            <LoginButton buttonStyle="btn--outline">Login</LoginButton>
+          )}
         </div>
       </nav>
     </>

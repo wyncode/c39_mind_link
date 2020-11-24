@@ -27,6 +27,7 @@ const Signup = ({ history }) => {
     }
   };
 
+
   return (
     <>
       <NavBar />
