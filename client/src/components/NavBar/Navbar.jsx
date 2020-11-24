@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './Button';
+import { LoginButton } from './LoginButton';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -64,7 +64,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Login</Button>}
+          {button && (
+            <LoginButton buttonStyle="btn--outline">Login</LoginButton>
+          )}
         </div>
       </nav>
     </>
