@@ -90,4 +90,3 @@ export const EditProfile = () => {
   );
 };
 
-export default EditProfile;

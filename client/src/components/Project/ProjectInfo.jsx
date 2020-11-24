@@ -17,7 +17,7 @@ const ProjectInfo = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [setCollabPost]);
 
   return (
     <div>

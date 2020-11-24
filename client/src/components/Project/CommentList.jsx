@@ -29,15 +29,14 @@ const CommentList = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  });
 
   return (
     <div>
       <CommentForm />
       <Comment />
-      {/* {comments.map((comment) => (
-        <Comment key={comment._id} comment={comment} />
-      ))} */}
+
+      <Comment comments={comments} />
     </div>
   );
 };
