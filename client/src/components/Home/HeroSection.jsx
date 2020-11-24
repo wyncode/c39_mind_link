@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import { Button } from '../NavBar/Button';
+import { SignUpButton } from './SignUpButton';
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -10,20 +10,13 @@ const HeroSection = () => {
       <h1>Hero Section Header</h1>
       <p>Hero Section Subheader</p>
       <div className="hero-btns">
-        <Button
+        <SignUpButton
           className="btns"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
           Sign Up
-        </Button>
-        <Button
-          className="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-        >
-          Learn More
-        </Button>
+        </SignUpButton>
       </div>
     </div>
   );
