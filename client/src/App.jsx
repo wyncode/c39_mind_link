@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppContextProvider } from './context/AppContext';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 import Profile from './Pages/Profile';
 import Home from './Pages/Home';
 import ProjectList from './Pages/ProjectList';
@@ -19,7 +20,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/profile" component={Profile} />
+          <PrivateRoute exact path="/profile" component={Profile} />
           <Route exact path="/project-list" component={ProjectList} />
           <Route exact path="/create-project" component={CreateProject} />
           <Route exact path="/reset-password" component={ResetPassword} />

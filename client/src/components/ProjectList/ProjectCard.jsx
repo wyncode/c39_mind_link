@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProjectCard.css';
 
-const ProjectCard = () => {
+const ProjectCard = ({ project }) => {
   return (
     <div>
       <div id="projectCardContainer">
@@ -12,7 +12,9 @@ const ProjectCard = () => {
             alt="avatar"
           />
         </div>
-        <div id="projectCardName">Project Name</div>
+        <div id="projectCardName" key={project._id}>
+          {project.projectName}
+        </div>
         <div id="projectCardDesc">Project Description</div>
         <div id="projectCardOwner">Project Owner</div>
         <div id="projectCardLink">Link to Details</div>

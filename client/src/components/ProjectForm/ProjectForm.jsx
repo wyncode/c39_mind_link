@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
+import swal from 'sweetalert';
 
 import Navbar from '../NavBar/Navbar';
 
@@ -34,11 +35,14 @@ const ProjectForm = () => {
       await axios({
         method: 'POST',
         url: '/api/projects',
+        withCredentials: true,
         data: collabFormData
       });
+      swal('New Project!', 'Your project has been added!', 'success');
       setCollabFormData(emptyFormState);
       form.reset();
     } catch (error) {
+      console.log(collabFormData);
       console.log(error);
     } finally {
       setLoading(false);
