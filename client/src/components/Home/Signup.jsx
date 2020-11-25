@@ -22,12 +22,11 @@ const Signup = () => {
       sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data.user);
       console.log(response.data);
-      history.push('/');
+      history.push('/profile');
     } catch (error) {
       swal('SignUp Error: ', error.toString());
     }
   };
-
 
   return (
     <>
