@@ -36,40 +36,38 @@ const Login = () => {
     <>
       <Navbar />
       <div className="loginContainer">
-        <div className="FormWrap">
-          <div to="/" className="logo">
-            Mind-Link
-          </div>
-          <div className="FormContent">
-            <form className="Form" action="#" onSubmit={handleLogin}>
-              <h1 className="FormH1">Login</h1>
-              <label className="FormLabel" htmlFor="for">
-                Artist Name
-              </label>
-              <input
-                className="FormInput"
-                type="text"
-                name="artistName"
-                required
-                onChange={handleChange}
-              />
-              <label className="FormLabel" htmlFor="for">
-                Password
-              </label>
-              <input
-                className="FormInput"
-                type="password"
-                name="password"
-                required
-                onChange={handleChange}
-              />
-              <button className="FormButton" type="submit">
-                Login
-              </button>
-              <span className="Text">Forgot Password?</span>
-              <Link to="/sign-up">Need an Account? Sign up.</Link>
-            </form>
-          </div>
+        <div className="FormContent">
+          <form className="Form" action="#" onSubmit={handleLogin}>
+            <h1 className="FormH1">Login</h1>
+            <label className="FormLabel" htmlFor="for">
+              Artist Name
+            </label>
+            <input
+              className="FormInput"
+              style={{ width: '100%' }}
+              type="text"
+              name="artistName"
+              required
+              onChange={handleChange}
+            />
+            <label className="FormLabel" htmlFor="for">
+              Password
+            </label>
+            <input
+              className="FormInput"
+              type="password"
+              name="password"
+              required
+              onChange={handleChange}
+            />
+            <button className="FormButton" type="submit">
+              Login
+            </button>
+            <Link className="resetPasswordLink">Forgot Password?</Link>
+            <Link className="signUpLink" to="/sign-up">
+              Need an Account? Sign up.
+            </Link>
+          </form>
         </div>
       </div>
     </>

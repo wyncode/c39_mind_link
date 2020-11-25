@@ -28,6 +28,7 @@ const EditProfile = () => {
     }
   };
 
+const EditProfile = () => {
   return (
     <>
       <Navbar />
