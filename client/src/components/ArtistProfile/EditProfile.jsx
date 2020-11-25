@@ -2,7 +2,7 @@ import React from 'react';
 import './EditProfile.css';
 import Navbar from '../NavBar/Navbar';
 
-export const EditProfile = () => {
+const EditProfile = () => {
   return (
     <>
       <Navbar />
@@ -90,3 +90,4 @@ export const EditProfile = () => {
   );
 };
 
+export default EditProfile;
