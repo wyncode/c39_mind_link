@@ -1,62 +1,43 @@
 import React from 'react';
 import './Profile.css';
+import NavBar from '../NavBar/Navbar';
 
 const Profile = () => {
   return (
-    <div>
-      <div className="profileGreyBar"></div>
-      <div id="profilecontainer">
-        <div id="profilecircle"></div>
-        <div id="profilename">
-          <p>ARTIST NAME</p>
+    <>
+      <NavBar />
+      <div className="fullpage">
+        <div className="infocontainer">
+          <div className="pic">
+            <img
+              alt="User"
+              className="be6sR"
+              src="https://scontent-mia3-1.cdninstagram.com/v/t51.2885-19/s150x150/116426504_1186323501702731_3953026223783822984_n.jpg?_nc_ht=scontent-mia3-1.cdninstagram.com&amp;_nc_ohc=i4TfFI981w4AX855Lf-&amp;tp=1&amp;oh=ec381ebad1a65853271deb77e412aeae&amp;oe=5FE3E0E9"
+            ></img>
+          </div>
+          <div className="myinfo">Profile Info</div>
+          <div className="projects">Current Projects</div>
         </div>
-        <div className="profileButtons">
-          <button className="profileButton" id="musicbutton">
-            MUSIC
-          </button>
-          <button className="profileButton" id="videosbutton">
-            VIDEOS
-          </button>
+
+        <div className="info">
+          <div className="me">About me</div>
+          <div className="mysounds">
+            MySounds
+            <ul>
+              <li></li>
+            </ul>
+          </div>
         </div>
-        <div id="profilebio">
-          <p>
-            Ozzy is a music producer and up-and-coming artist. He enjoys
-            networking within...
-          </p>
-        </div>
-        <div className="biolinks">
-          <a href="www.soundcloud.com">
-            <img
-              className="profileicons"
-              src="https://i1.wp.com/www.playwrightslocal.org/wp-content/uploads/2018/04/icon-soundcloud.png?fit=1024%2C1024"
-              alt="cloudicon"
-            />
-          </a>
-          <a href="www.instagram.com">
-            <img
-              className="profileicons"
-              src="https://www.pinclipart.com/picdir/big/83-831769_tonka-turkey-trot-on-instagram-ig-circle-logo.png"
-              alt="insta"
-            />
-          </a>
-          <a href="www.spotifiy.com">
-            <img
-              className="profileicons"
-              src="https://www.iconfinder.com/data/icons/popular-services-brands/512/spotify-512.png"
-              alt="spotifu"
-            />
-          </a>
-          <a href="www.youtube.com">
-            <img
-              className="profileicons"
-              src="https://www.pinclipart.com/picdir/middle/232-2328226_youtube-icon-circle-clipart-youtube-computer-icons-png.png"
-              alt="youtube"
-            />
-          </a>
+
+        <div className="comments">
+          Comments
+          <div>
+            <textarea type="text" col="10" row="10" />
+            <button>Comment</button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
-
 export default Profile;
