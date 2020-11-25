@@ -9,7 +9,7 @@ const router = require('express').Router(),
   } = require('../../controllers/users');
 
 router.get('/me', getCurrentUser);
-router.patch('/me', updateCurrentUser);
+router.patch('/edit-profile', updateCurrentUser);
 router.post('/logout', logoutUser);
 router.post('/logoutall', logoutAllDevices);
 router.delete('/', deleteUser);

@@ -1,68 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Audiowide&family=Roboto&display=swap');
-
-.profileGreyBar {
-  width: 100vw;
-  height: 205px;
-  background-color: #575757;
+.fullpage {
+  background: linear-gradient(360deg, #00758f 0%, #3f008f 100%);
 }
 
-#profilecontainer {
+.infocontainer {
+  width: max-width;
+  height: 40vh;
+  margin: 10vh 5vh 0vh 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: white;
+}
+
+.pic {
+  width: 35vh;
+  height: 32vh;
+  text-align: center;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 4rem;
-  width: 37%;
-}
-#profilecircle {
-  width: 250px;
-  height: 250px;
   border-radius: 50%;
-  background-image: url('https://i.pinimg.com/474x/a6/2f/ff/a62fff451fee32c067bf1b9118fbb18e.jpg');
-  background-size: cover;
-  background-color: teal;
-  margin-top: -190px;
 }
 
-#profilename {
-  color: #575757;
-  font-family: 'Roboto', sans-serif;
-  font-size: 28px;
-  font-weight: bold;
+img {
+  border-radius: 50%;
+  width: 35vh;
+  height: 32vh;
 }
 
-.profileButtons {
+.myinfo {
+  border: 2px solid orange;
+  width: 40vh;
+  height: 30vh;
+  text-align: center;
+  margin: auto;
+}
+
+.projects {
+  border: 2px solid orange;
+  width: 40vh;
+  height: 30vh;
+  text-align: center;
+  margin: auto;
+}
+
+.info {
+  width: max-width;
+  height: 40vh;
+  margin: 0vh 5vh 0vh 5vh;
+  text-align: center;
   display: flex;
-  justify-content: center;
-  /* width: 25vw; */
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: white;
 }
 
-.profileButton {
-  color: whitesmoke;
-  background-color: #575757;
-  padding: 0px 30px;
-  border-radius: 3px;
-  border: none;
-  font-size: 21px;
-  font-family: 'Roboto', sans-serif;
+.me {
+  border: 2px solid blue;
+  width: 80vh;
+  height: 35vh;
+  margin: 2vh 0vh 2vh 0vh;
+}
+.mysounds {
+  border: 2px solid blue;
+  width: 80vh;
+  height: 35vh;
+  margin: 2vh 0vh 2vh 0vh;
+}
+
+.infoBox {
+  border: 2px solid blue;
+  width: max-width;
+  height: 40vh;
+  margin: 0vh 5vh 0vh 5vh;
   text-align: center;
-  margin: 0px 10px;
-  height: 62px;
-  width: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-#profilebio {
-  color: #575757;
-  font-family: 'Roboto', sans-serif;
-  padding: 5px 35px 15px 35px;
-  margin-bottom: 30px;
-  margin-top: 10px;
+.text {
+  border: 2px solid blue;
+  width: 80vh;
+  height: 30vh;
+}
+
+.sounds {
+  border: 2px solid blue;
+  width: 80vh;
+  height: 30vh;
+}
+
+.comments {
+  width: max-width;
+  height: 40vh;
+  margin: 0vh 5vh 0vh 5vh;
   text-align: center;
-}
-
-.profileicons {
-  width: 50px;
-  height: 50px;
-  margin: 0px 25px;
+  margin-bottom: 10vh;
+  background: white;
 }
