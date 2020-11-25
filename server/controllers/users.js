@@ -57,7 +57,7 @@ exports.getCurrentUser = async (req, res) => res.json(req.user);
 //Update a user
 exports.updateCurrentUser = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['firstname', 'lastName', 'email', 'password'];
+  const allowedUpdates = ['firstName', 'lastName', 'email', 'password'];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
