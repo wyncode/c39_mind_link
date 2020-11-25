@@ -13,6 +13,7 @@ const Signup = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log(formData);
   };
 
   const handleSignUp = async (e) => {
@@ -21,13 +22,11 @@ const Signup = () => {
       const response = await axios.post('/api', formData);
       sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data.user);
-      console.log(response.data);
-      history.push('/');
+      history.push('/profile');
     } catch (error) {
       swal('SignUp Error: ', error.toString());
     }
   };
-
 
   return (
     <>

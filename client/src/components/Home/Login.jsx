@@ -41,7 +41,7 @@ const Login = () => {
             Mind-Link
           </div>
           <div className="FormContent">
-            <form className="Form" action="#" onSubmit={handleLogin}>
+            <form className="Form" action="post" onSubmit={handleLogin}>
               <h1 className="FormH1">Login</h1>
               <label className="FormLabel" htmlFor="for">
                 Artist Name

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
+import './ProjectList.css';
 import axios from 'axios';
 
 const ProjectList = () => {
@@ -10,17 +11,18 @@ const ProjectList = () => {
       try {
         const projectCards = await axios.get('/api/projects');
         setProject(projectCards.data);
+        console.log(project);
       } catch (e) {
         console.log(e);
       }
     };
     fetchProjects();
-  }, []);
+  }, [project]);
 
   return (
-    <div>
+    <div id="projectCardList">
       {project.map((project) => {
-        return <ProjectCard projectcard={project} />;
+        return <ProjectCard project={project} className="projectCards" />;
       })}
     </div>
   );

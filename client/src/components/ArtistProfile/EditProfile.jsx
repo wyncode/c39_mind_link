@@ -55,7 +55,7 @@ export const EditProfile = () => {
         <ul className="leftside">
           <li>
             <img
-              alt="Change Profile Photo"
+              alt="Change Profile"
               className="be6sR"
               src="https://scontent-mia3-1.cdninstagram.com/v/t51.2885-19/s150x150/116426504_1186323501702731_3953026223783822984_n.jpg?_nc_ht=scontent-mia3-1.cdninstagram.com&amp;_nc_ohc=i4TfFI981w4AX855Lf-&amp;tp=1&amp;oh=ec381ebad1a65853271deb77e412aeae&amp;oe=5FE3E0E9"
             ></img>
@@ -90,3 +90,4 @@ export const EditProfile = () => {
   );
 };
 
+export default EditProfile;
