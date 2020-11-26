@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProjectHeader.css';
 
-const ProjectHeader = ({ project }) => {
+const ProjectHeader = ({ specProject }) => {
   return (
     <div id="headerTop">
       <div id="picAndInfoContainer">
@@ -9,15 +9,17 @@ const ProjectHeader = ({ project }) => {
           <img
             id="projectPic"
             src={
-              'https://edublog.soundtrap.com/wp-content/uploads/2017/10/Screen-Shot-2017-10-31-at-9.57.20-AM-732x380.png'
+              specProject.projectAvatar
+                ? specProject.projectAvatar
+                : 'https://files.willkennedy.dev/wyncode/wyncode.png'
             }
             alt="Project"
           />
         </div>
         <div id="infoContainer">
-          <p id="pName">{project.projectName}</p>
-          <p id="pDesc">{project.projectDescription}</p>
-          <p id="descFromDB">{project.projectBrief}</p>
+          <p id="pName">{specProject.projectName}</p>
+          <p id="pDesc">{specProject.projectDescription}</p>
+          <p id="descFromDB">{specProject.projectBrief}</p>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ const ProjectForm = () => {
     try {
       await axios({
         method: 'POST',
-        url: '/api/projects',
+        url: 'api/projects',
         withCredentials: true,
         data: collabFormData
       });

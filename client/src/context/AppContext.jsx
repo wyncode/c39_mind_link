@@ -15,6 +15,8 @@ export const AppContextProvider = ({ children }) => {
   const [collabFormData, setCollabFormData] = useState({});
   const [commentData, setCommentData] = useState({});
   const user = sessionStorage.getItem('user');
+  const [projectInfo, setProjectInfo] = useState([]);
+  const [specificProject, setSpecificProject] = useState({});
 
   useEffect(() => {
     if (user && !currentUser) {
@@ -54,7 +56,11 @@ export const AppContextProvider = ({ children }) => {
         commentData,
         setCommentData,
         project,
-        setProject
+        setProject,
+        projectInfo,
+        setProjectInfo,
+        specificProject,
+        setSpecificProject
       }}
     >
       {children}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
@@ -8,16 +9,22 @@ const ProjectCard = ({ project }) => {
         <div id="projectCardImg">
           <img
             id="projectCardAvatar"
-            src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+            src={
+              project.projectAvatar
+                ? project.projectAvatar
+                : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+            }
             alt="avatar"
           />
         </div>
-        <div id="projectCardName" key={project._id}>
-          {project.projectName}
+        <div id="projectCardName">{project.projectName}</div>
+        <div id="projectCardDesc">{project.projectDescription}</div>
+        <div id="projectCardOwner">
+          <Link to={`./profile/${project._id}`}>MindLink Owner</Link>
         </div>
-        <div id="projectCardDesc">Project Description</div>
-        <div id="projectCardOwner">Project Owner</div>
-        <div id="projectCardLink">Link to Details</div>
+        <div id="projectCardLink">
+          <Link to={`./project-details/${project._id}`}>Project Details</Link>
+        </div>
       </div>
     </div>
   );

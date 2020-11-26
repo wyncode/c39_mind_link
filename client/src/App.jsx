@@ -24,7 +24,7 @@ const App = () => {
           <Route exact path="/project-list" component={ProjectList} />
           <Route exact path="/create-project" component={CreateProject} />
           <Route exact path="/reset-password" component={ResetPassword} />
-          <Route exact path="/project-details" component={Project} />
+          <Route exact path="/project-details/:id" component={Project} />
           <Route exact path="/edit-profile" component={EditProfile} />
         </Switch>
       </BrowserRouter>
