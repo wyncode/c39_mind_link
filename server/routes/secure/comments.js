@@ -1,7 +1,10 @@
 const router = require('express').Router(),
-  { getComments, createComment } = require('../../controllers/comments');
+  {
+    getCommentsForAProject,
+    createComment
+  } = require('../../controllers/comments');
 
-router.get('/', getComments);
+router.get('/projects/:id/comments', getCommentsForAProject);
 router.post('/', createComment);
 
 module.exports = router;

@@ -12,7 +12,7 @@ exports.createComment = async (req, res) => {
   }
 };
 
-exports.getComments = async (req, res) => {
+exports.getCommentsForAProject = async (req, res) => {
   Comment.find()
     .then((posts) => res.json(posts))
     .catch((err) => res.status(500).json('Error: ' + err));
