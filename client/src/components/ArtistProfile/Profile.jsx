@@ -6,16 +6,16 @@ import NavBar from '../NavBar/Navbar';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState('');
+  const fetchProfile = async () => {
+    try {
+      const response = await axios.get('/api/users/me');
+      setProfileData(response.data);
+    } catch (error) {
+      swal('Error: ', error.toString());
+    }
+  };
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await axios.get('/api/users/me');
-        setProfileData(response.data);
-      } catch (error) {
-        swal('Error: ', error.toString());
-      }
-    };
     fetchProfile();
   }, [profileData]);
 
@@ -32,9 +32,11 @@ const Profile = () => {
             ></img>
           </div>
           <div className="myinfo">
-            Profile Info
             <ul>
-              <li>{profileData.firstName}</li>
+              <li>
+                {profileData.firstName} {profileData.lastName}
+              </li>
+              <li></li>
             </ul>
           </div>
 

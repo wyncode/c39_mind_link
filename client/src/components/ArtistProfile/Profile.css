@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   padding-top: 20vh;
+  border: 2px solid white;
 }
 
 .pic {
