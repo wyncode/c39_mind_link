@@ -1,15 +1,15 @@
 .fullpage {
-  background: linear-gradient(360deg, #00758f 0%, #3f008f 100%);
+  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
 }
 
 .infocontainer {
   width: max-width;
   height: 40vh;
-  margin: 10vh 5vh 0vh 5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: white;
+  padding-top: 20vh;
+  border: 2px solid white;
 }
 
 .pic {
@@ -24,22 +24,26 @@ img {
   border-radius: 50%;
   width: 35vh;
   height: 32vh;
+  border-color: white;
 }
 
 .myinfo {
   border: 2px solid orange;
-  width: 40vh;
+  width: 50vh;
   height: 30vh;
   text-align: center;
   margin: auto;
+  background: #0f3460;
 }
 
 .projects {
   border: 2px solid orange;
-  width: 40vh;
+  width: 60vh;
   height: 30vh;
   text-align: center;
   margin: auto;
+  background: #0f3460;
+  border-radius: 25px;
 }
 
 .info {
@@ -50,20 +54,23 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: white;
+  padding: 40vh;
+  border: 2px solid red;
 }
 
 .me {
   border: 2px solid blue;
-  width: 80vh;
+  width: 100vh;
   height: 35vh;
-  margin: 2vh 0vh 2vh 0vh;
+  margin: 2vh 20vh 2vh 0vh;
+  background: #0f3460;
 }
 .mysounds {
   border: 2px solid blue;
-  width: 80vh;
+  width: 100vh;
   height: 35vh;
-  margin: 2vh 0vh 2vh 0vh;
+  margin: 2vh 0vh 5vh 0vh;
+  background: #0f3460;
 }
 
 .infoBox {
@@ -94,6 +101,16 @@ img {
   height: 40vh;
   margin: 0vh 5vh 0vh 5vh;
   text-align: center;
-  margin-bottom: 10vh;
-  background: white;
+  padding: 30vh;
+}
+.commentbtn {
+  background: linear-gradient(180deg, #b321cf 0%, rgba(33, 71, 207, 0.79) 100%);
+  padding: 10px;
+  /* border: none; */
+  border-radius: 6px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  border-color: white;
+  margin-top: 2vh;
 }
