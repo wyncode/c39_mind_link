@@ -45,11 +45,11 @@ const userSchema = new mongoose.Schema(
       type: String
     },
     currentProjects: {
-      type: URL
+      type: String
     },
 
     myMusic: {
-      type: URL
+      type: String
     },
 
     avatar: {
