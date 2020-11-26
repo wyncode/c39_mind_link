@@ -8,14 +8,19 @@
   position: absolute;
   right: 0;
   width: 150vh;
+  height: 150%;
   background: rgb(243, 241, 241);
+  border: 2px solid red;
 }
 
 .leftside {
   position: absolute;
-  width: 50vh;
+  width: 54vh;
+  height: 150%;
   padding: 1%;
   text-align: center;
+  border: 2px solid purple;
+  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
 }
 
 .title {
@@ -98,14 +103,14 @@ select {
 
 .Savebtn {
   width: 20vh;
-  background-color: blue;
+  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
+
   color: white;
   padding: 5px 20px;
-  margin: auto;
+  /* margin: auto; */
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  align-content: center;
 }
 
 .Resetbtn {

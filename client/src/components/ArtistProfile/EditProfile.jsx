@@ -1,5 +1,5 @@
 import './EditProfile.css';
-import Navbar from '../NavBar/Navbar';
+import NavBar from '../NavBar/Navbar';
 import { AppContext } from '../../context/AppContext';
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -28,9 +28,10 @@ const EditProfile = () => {
     }
   };
 
+const EditProfile = () => {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <div className="FullPage">
         <div className="rightside">
           <form action="/action_page.php" onSubmit={handleEditProfile}>
