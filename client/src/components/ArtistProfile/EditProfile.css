@@ -1,142 +1,136 @@
-.EditTitle {
-  color: darkblue;
-  margin-left: 3vh;
-  padding-left: 3vh;
-}
-
-.rightside {
-  position: absolute;
-  right: 0;
-  width: 150vh;
-  height: 150%;
-  background: rgb(243, 241, 241);
-  border: 2px solid red;
+.editprofile {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #025061 0%, #3f008f 100%);
+  padding: 9vh 0vh 9vh 0vh;
 }
 
 .leftside {
-  position: absolute;
-  width: 54vh;
-  height: 150%;
-  padding: 1%;
+  float: left;
+  width: 30%;
+  height: 70vh;
+  background: white;
   text-align: center;
-  border: 2px solid purple;
-  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
 }
 
-.title {
-  width: 50%;
-  padding: 10px;
-  margin: auto;
-  display: flex;
-  font-weight: bold;
-  color: darkblue;
+.be6sR {
+  border-radius: 50%;
+  margin: 5vh;
 }
 
-input[type='text'],
-select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: auto;
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type='submit'] {
-  width: 20vh;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: auto;
+button[type='submit'] {
+  margin: 3vh 0vh 0vh 0vh;
+  width: 16vh;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  align-content: center;
+  color: white;
+  padding: 0.5vh;
+  border-radius: 5px;
+  padding: 0.6vh;
 }
 
-input[type='submit']:hover {
-  background-color: #45a049;
+button[type='file'] {
+  margin: 0vh 0vh 0vh 0vh;
+  width: 16vh;
+  border: none;
+  color: white;
+  padding: 0.5vh;
+  border-radius: 5px;
+  padding: 0.6vh;
+}
+
+.Resetbtn {
+  background: rgb(37, 184, 221);
+}
+
+.Deletebtn {
+  background: red;
+}
+
+.rightside {
+  float: right;
+  width: 50%;
+  height: 70vh;
+  background: white;
+  text-align: left;
+  overflow: scroll;
+}
+
+.topdiv {
+  display: flex;
+  direction: row;
+}
+
+.topbtns {
+  height: 4vh;
+  width: 8vh;
+  margin: 6vh 2vh 0vh 0vh;
+  color: white;
+  background: rgb(37, 184, 221);
+  border: none;
+  border-radius: 5px;
+}
+
+.topbtnc {
+  height: 4vh;
+  width: 8vh;
+  margin: 6vh 0vh 0vh 0vh;
+  color: rgb(37, 184, 221);
+  background: white;
+  border: 2px solid rgb(37, 184, 221);
+  border-radius: 5px;
+}
+
+.basicinfo {
+  margin: 5vh 0vh 0vh 15vh;
+  width: 40vh;
+  color: rgb(69, 69, 151);
+  text-decoration: underline;
+}
+
+.myfname {
+  width: 40%;
+  margin: 5vh 0vh 0vh 15vh;
 }
 
 ul {
   list-style-type: none;
 }
 
-li {
-  padding: 10px;
+.plist {
+  margin: 1vh 0vh 1vh 0vh;
 }
 
-input[type='url'],
-select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: auto;
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input[type='text'] {
+  margin: 1vh 0vh 0vh 15vh;
+  width: 70vh;
+  padding: 0.7vh;
+  border-radius: 6px;
 }
 
-textarea[type='text'],
-select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: auto;
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+textarea[type='text'] {
+  margin: 1vh 0vh 0vh 15vh;
+  width: 70vh;
+  padding: 0.7vh;
+  border-radius: 6px;
 }
 
-.Imagebtn {
-  width: 20vh;
-  background-color: blue;
-  color: white;
-  padding: 5px 20px;
-  margin: auto;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  align-content: center;
+input[type='URL'] {
+  margin: 1vh 0vh 0vh 0vh;
+  width: 70vh;
+  padding: 0.7vh;
+  border-radius: 6px;
 }
 
-.Savebtn {
-  width: 20vh;
-  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
-
-  color: white;
-  padding: 5px 20px;
-  /* margin: auto; */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+label {
+  color: rgb(69, 69, 151);
+  font-weight: bolder;
 }
 
-.Resetbtn {
-  width: 20vh;
-  background-color: blue;
-  color: white;
-  padding: 5px 20px;
-  margin: auto;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  align-content: center;
+.ruly {
+  border-left: 2px solid rgb(226, 224, 233);
 }
 
-.Deletebtn {
-  width: 20vh;
-  background-color: red;
-  color: white;
-  padding: 5px 20px;
-  margin: auto;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  align-content: center;
-}
-
-.be6sR {
-  border-radius: 50%;
+.lower {
+  margin-left: 45vh;
+  padding-bottom: 3vh;
 }

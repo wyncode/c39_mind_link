@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+// import swal from 'sweetalert';
 
 export const AppContext = createContext();
 
@@ -29,7 +30,6 @@ export const AppContextProvider = ({ children }) => {
         })
         .catch((error) => {
           // swal(`Oops!`, error.toString());
-          console.log(error);
         });
     }
   }, [currentUser, user]);
