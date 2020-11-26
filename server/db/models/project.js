@@ -12,7 +12,7 @@ const projectSchema = new mongoose.Schema(
     talentNeeded: { type: String, required: true },
     genre: { type: String, required: true },
     mood: { type: String, required: true },
-    comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' },
+    // comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' },
     projectAvatar: {
       type: String,
       default: 'https://files.willkennedy.dev/wyncode/wyncode.png'
