@@ -24,16 +24,39 @@ const userSchema = new mongoose.Schema(
         }
       }
     },
+
+    socialMedia: {
+      type: String,
+      trim: true,
+      lowercase: true
+    },
+
     firstName: {
       type: String,
       required: true,
       trim: true
     },
+
     lastName: {
       type: String,
       required: true,
       trim: true
     },
+    bio: {
+      type: String
+    },
+    currentProjects: {
+      type: URL
+    },
+
+    myMusic: {
+      type: URL
+    },
+
+    avatar: {
+      type: String
+    },
+
     password: {
       type: String,
       required: true,

@@ -1,116 +1,33 @@
-.fullpage {
-  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
-}
-
-.infocontainer {
-  width: max-width;
-  height: 40vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding-top: 20vh;
-  border: 2px solid white;
-}
-
-.pic {
-  width: 35vh;
-  height: 32vh;
-  text-align: center;
-  margin: auto;
-  border-radius: 50%;
-}
-
-img {
-  border-radius: 50%;
-  width: 35vh;
-  height: 32vh;
-  border-color: white;
-}
-
-.myinfo {
-  border: 2px solid orange;
-  width: 50vh;
-  height: 30vh;
-  text-align: center;
-  margin: auto;
-  background: #0f3460;
-}
-
-.projects {
-  border: 2px solid orange;
-  width: 60vh;
-  height: 30vh;
-  text-align: center;
-  margin: auto;
-  background: #0f3460;
-  border-radius: 25px;
-}
-
-.info {
-  width: max-width;
-  height: 40vh;
-  margin: 0vh 5vh 0vh 5vh;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 40vh;
+.main {
   border: 2px solid red;
-}
-
-.me {
-  border: 2px solid blue;
-  width: 100vh;
-  height: 35vh;
-  margin: 2vh 20vh 2vh 0vh;
-  background: #0f3460;
-}
-.mysounds {
-  border: 2px solid blue;
-  width: 100vh;
-  height: 35vh;
-  margin: 2vh 0vh 5vh 0vh;
-  background: #0f3460;
-}
-
-.infoBox {
-  border: 2px solid blue;
-  width: max-width;
-  height: 40vh;
-  margin: 0vh 5vh 0vh 5vh;
+  height: 150vh;
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
 
-.text {
-  border: 2px solid blue;
-  width: 80vh;
-  height: 30vh;
-}
-
-.sounds {
-  border: 2px solid blue;
-  width: 80vh;
-  height: 30vh;
-}
-
-.comments {
-  width: max-width;
+.second {
+  border: 2px solid red;
   height: 40vh;
-  margin: 0vh 5vh 0vh 5vh;
-  text-align: center;
-  padding: 30vh;
+  width: 80%;
+  margin: 8vh auto 0vh;
 }
-.commentbtn {
-  background: linear-gradient(180deg, #b321cf 0%, rgba(33, 71, 207, 0.79) 100%);
-  padding: 10px;
-  /* border: none; */
-  border-radius: 6px;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  border-color: white;
-  margin-top: 2vh;
+
+.written {
+  border: 2px solid red;
+  width: 80%;
+  height: 85vh;
+  margin: auto;
+}
+
+.photo {
+  border: 2px solid blue;
+  width: 25%;
+  height: 50vh;
+  margin: 12vh 0vh 0vh 10vh;
+}
+
+.bio {
+  border: 2px solid blue;
+  width: 25%;
+  height: 50vh;
+  margin: 0vh 0vh 0vh 10vh;
 }
