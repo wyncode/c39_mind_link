@@ -25,7 +25,13 @@ const ProjectList = () => {
       <div>Add styling</div>
       <div id="projectCardList">
         {project.map((project) => {
-          return <ProjectCard project={project} className="projectCards" />;
+          return (
+            <ProjectCard
+              key={project._id}
+              project={project}
+              className="projectCards"
+            />
+          );
         })}
       </div>
     </div>
