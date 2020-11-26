@@ -13,6 +13,7 @@ const Signup = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log(formData);
   };
 
   const handleSignUp = async (e) => {

@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { AppContext } from '../../context/AppContext';
-import axios from 'axios';
+import React from 'react';
+// import { useContext, useEffect } from 'react';
+// import { AppContext } from '../../context/AppContext';
+// import axios from 'axios';
 import CommentForm from './CommentForm';
 import Comment from './Comment';
 import './CommentList.css';
@@ -17,26 +18,27 @@ import './CommentList.css';
 // });
 // return comment.description.toLowerCase().includes(search.toLowerCase());
 
-const CommentList = () => {
-  const { comments, setComments } = useContext(AppContext);
+const CommentList = ({ specProject }) => {
+  // const { comments, setComments } = useContext(AppContext);
 
-  useEffect(() => {
-    axios
-      .get('/api/comments')
-      .then((response) => {
-        setComments(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+  // useEffect(() => {
+  //   axios
+  //     //need to add route
+  //     .get('./')
+  //     .then((response) => {
+  //       setComments(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // });
 
   return (
     <div>
-      <CommentForm />
+      <CommentForm specProject={specProject} />
       <Comment />
 
-      <Comment comments={comments} />
+      {/* <Comment comments={comments} /> */}
     </div>
   );
 };

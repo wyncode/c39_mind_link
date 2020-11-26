@@ -9,8 +9,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      lowercase: true,
-      unique: true
+      lowercase: true
     },
     email: {
       type: String,
@@ -24,16 +23,39 @@ const userSchema = new mongoose.Schema(
         }
       }
     },
+
+    socialMedia: {
+      type: String,
+      trim: true,
+      lowercase: true
+    },
+
     firstName: {
       type: String,
       required: true,
       trim: true
     },
+
     lastName: {
       type: String,
       required: true,
       trim: true
     },
+    bio: {
+      type: String
+    },
+    currentProjects: {
+      type: String
+    },
+
+    myMusic: {
+      type: String
+    },
+
+    avatar: {
+      type: String
+    },
+
     password: {
       type: String,
       required: true,

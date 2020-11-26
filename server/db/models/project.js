@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+User = require('./user.js');
 
 const projectSchema = new mongoose.Schema(
   {
@@ -11,8 +12,12 @@ const projectSchema = new mongoose.Schema(
     talentNeeded: { type: String, required: true },
     genre: { type: String, required: true },
     mood: { type: String, required: true },
-    projectAvatar: { type: String, required: true },
-    mindlinkpProfile: { type: String }
+    // comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' },
+    projectAvatar: {
+      type: String,
+      default: 'https://files.willkennedy.dev/wyncode/wyncode.png'
+    },
+    mindlinkpProfile: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   },
   { timestamps: true }
 );

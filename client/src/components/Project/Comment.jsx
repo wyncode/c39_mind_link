@@ -16,15 +16,13 @@ const Comment = ({ comments }) => {
 
           <form>
             <div id="commentFormContainer">
-              <form>
-                <textarea
-                  id="formComment"
-                  name="formComment"
-                  type="text"
-                  rows="3"
-                  cols="120"
-                />
-              </form>
+              <textarea
+                id="formComment"
+                name="formComment"
+                type="text"
+                rows="3"
+                cols="120"
+              />
             </div>
           </form>
         </div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import './CommentForm.css';
 
-const CommentForm = () => {
+const CommentForm = ({ specProject }) => {
   const [commentData, setCommentData] = useState({});
   const { setLoading } = useContext(AppContext);
 
@@ -17,10 +17,10 @@ const CommentForm = () => {
     try {
       await axios({
         method: 'POST',
-        url: '/api/comments',
+        url: '/api/comments/projects/:id/comments',
         data: commentData
       });
-
+      console.log(commentData);
       form.reset();
     } catch (error) {
       console.log(error);
@@ -36,7 +36,11 @@ const CommentForm = () => {
           <div>
             <img
               className="commentAvatar"
-              src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+              src={
+                specProject.avatar
+                  ? specProject.avatar
+                  : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+              }
               alt="avatar"
             />
           </div>
