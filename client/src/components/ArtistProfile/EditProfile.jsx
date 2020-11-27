@@ -38,7 +38,7 @@ const EditProfile = () => {
               <img
                 alt="User"
                 className="be6sR"
-                src="https://scontent-mia3-1.cdninstagram.com/v/t51.2885-19/s150x150/116426504_1186323501702731_3953026223783822984_n.jpg?_nc_ht=scontent-mia3-1.cdninstagram.com&amp;_nc_ohc=i4TfFI981w4AX855Lf-&amp;tp=1&amp;oh=ec381ebad1a65853271deb77e412aeae&amp;oe=5FE3E0E9"
+                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/drake-attends-the-top-boy-uk-premiere-at-hackney-news-photo-1586363414.jpg?crop=1.00xw:0.708xh;0,0.0457xh&resize=480:*"
               ></img>
             </li>
             <li>
@@ -124,7 +124,7 @@ const EditProfile = () => {
                 <input
                   type="text"
                   placeholder="@JohnRoss"
-                  name="socialmedia"
+                  name="socialMedia"
                   onChange={handleChange}
                 />
               </div>
