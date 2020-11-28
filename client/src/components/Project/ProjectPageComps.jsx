@@ -5,6 +5,7 @@ import ProjectHeader from './ProjectHeader';
 import ProjectInfo from './ProjectInfo';
 import CommentList from './CommentList';
 import './ProjectPageComps.css';
+import Navbar from '../NavBar/Navbar';
 
 const ProjectPageComps = () => {
   const [specificProject, setSpecificProject] = useState({});
@@ -37,6 +38,7 @@ const ProjectPageComps = () => {
 
   return (
     <div>
+      <Navbar />
       <div id="collabContainer1">
         <div id="collabHeader">
           <ProjectHeader specProject={specificProject} />
