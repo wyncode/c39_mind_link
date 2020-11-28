@@ -34,50 +34,56 @@ const ProjectList = () => {
     console.log('sorted 2', projects);
   };
 
-  const sortStarted3 = () => {
-    const array = projects.sort((a, b) =>
-      b.projectName.localeCompare(a.projectName) ? 1 : -1
-    );
-    setProjects(array);
-    console.log('sorted 3', projects);
-  };
+  // const sortStarted3 = () => {
+  //   const array = projects.sort((a, b) =>
+  //     b.projectName.localeCompare(a.projectName) ? 1 : -1
+  //   );
+  //   setProjects(array);
+  //   console.log('sorted 3', projects);
+  // };
 
   return (
-    <div>
+    <div id="projectListContainer">
+      <h2 id="plHeader">
+        It's time to SPARK magic and join your next collaboration!
+      </h2>
+      <div id="listHeader">
+        <img
+          className="listImage"
+          src={
+            'https://online.berklee.edu/takenote/wp-content/uploads/2020/05/courses_for_creation_and_collaboration_article_image.jpg'
+          }
+          alt="Collaborating"
+        />
+
+        <div id="listTextContainer">
+          <p id="p1" className="listText">
+            Start or join a collaboration project Whether it's a guitar riff,
+            drum loop, a vocal a cappella or lyrics - just start your own music
+            collaboration project and upload your idea. Then, wait for others to
+            join in, or send invites to other members. You can also jump in on
+            any other open project by uploading your idea as an audition.
+          </p>
+          <p id="p2" className="listText">
+            On MindLink, your collaborators may be located in different
+            countries and therefore will be waking, working, eating, writing,
+            recording, and sleeping at different times of the day. MindLink
+            allows members to upload and manage their work in a collaborative
+            project environment where others can later upload and download
+            tracks and work on them at their own convenience, at any time of the
+            day or night.
+          </p>
+        </div>
+      </div>
       <div>
         {' '}
-        <button
-          style={{
-            color: 'white',
-            backgroundColor: 'black',
-            borderRadius: '15px'
-          }}
-          onClick={sortStarted1}
-        >
-          Sort by Start Date 1
+        <button className="sortButton" onClick={sortStarted1}>
+          Projects Starting Soon
         </button>
-        <button
-          style={{
-            color: 'white',
-            backgroundColor: 'black',
-            borderRadius: '15px'
-          }}
-          onClick={sortStarted2}
-        >
-          Sort by Start Date 2
-        </button>
-        <button
-          style={{
-            color: 'white',
-            backgroundColor: 'black',
-            borderRadius: '15px'
-          }}
-          onClick={sortStarted3}
-        >
-          Sort by Start Date 3
+        <button className="sortButton" onClick={sortStarted2}>
+          Project Starting Much Later
         </button>
       </div>
-      <div>Add styling</div>
       <div id="projectCardList">
         {projects.map((project) => {
           return (
