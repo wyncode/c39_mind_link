@@ -10,37 +10,6 @@ const EditProfile = () => {
   const { currentUser, setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState('');
   const history = useHistory();
-  const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState(null);
-
-  const handleImageSelect = (e) => {
-    setPreview(URL.createObjectURL(e.target.files[0]));
-    setImage(e.target.files[0]);
-  };
-  console.log(preview);
-
-  const handleAvatar = async (e) => {
-    e.preventDefault();
-    const avatar = new FormData();
-
-    avatar.append('avatar', image, image?.name);
-
-    try {
-      const updatedUser = await axios({
-        method: 'POST',
-        url: '/api/users/avatar',
-        data: avatar,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
-      swal('Sweet!', 'Your image has been updated!', 'success');
-    } catch (error) {
-      console.log(error);
-      swal('Error', 'Oops, something went wrong.');
-    }
-  };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
