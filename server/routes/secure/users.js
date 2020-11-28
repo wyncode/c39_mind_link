@@ -5,7 +5,8 @@ const router = require('express').Router(),
     logoutUser,
     logoutAllDevices,
     deleteUser,
-    updatePassword
+    updatePassword,
+    uploadAvatar
   } = require('../../controllers/users');
 
 router.get('/me', getCurrentUser);
@@ -14,5 +15,6 @@ router.post('/logout', logoutUser);
 router.post('/logoutall', logoutAllDevices);
 router.delete('/', deleteUser);
 router.put('/password', updatePassword);
+router.post('/avatar', uploadAvatar);
 
 module.exports = router;

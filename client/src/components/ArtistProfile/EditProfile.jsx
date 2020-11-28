@@ -7,9 +7,40 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const EditProfile = () => {
-  const { setCurrentUser } = useContext(AppContext);
+  const { currentUser, setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState('');
   const history = useHistory();
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  const handleImageSelect = (e) => {
+    setPreview(URL.createObjectURL(e.target.files[0]));
+    setImage(e.target.files[0]);
+  };
+  console.log(preview);
+
+  const handleAvatar = async (e) => {
+    e.preventDefault();
+    const avatar = new FormData();
+
+    avatar.append('avatar', image, image?.name);
+
+    try {
+      const updatedUser = await axios({
+        method: 'POST',
+        url: '/api/users/avatar',
+        data: avatar,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
+      swal('Sweet!', 'Your image has been updated!', 'success');
+    } catch (error) {
+      console.log(error);
+      swal('Error', 'Oops, something went wrong.');
+    }
+  };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -28,6 +59,39 @@ const EditProfile = () => {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      const willDelete = await swal({
+        title: 'Are you sure?',
+        text: 'Once deleted, you will not be able to recover this account!',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true
+      });
+      if (willDelete) {
+        try {
+          await axios({
+            method: 'DELETE',
+            url: '/api/users',
+            withCredentials: true
+          });
+          swal('Poof! Your account has been deleted!', {
+            icon: 'success'
+          });
+          sessionStorage.removeItem('user');
+          setCurrentUser(null);
+          history.push('/');
+        } catch (error) {
+          swal(`Oops!`, 'Something went wrong.');
+        }
+      } else {
+        swal('Your account is safe!');
+      }
+    } catch (error) {
+      swal(`Oops!`, 'Something went wrong.');
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -38,13 +102,24 @@ const EditProfile = () => {
               <img
                 alt="User"
                 className="be6sR"
-                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/drake-attends-the-top-boy-uk-premiere-at-hackney-news-photo-1586363414.jpg?crop=1.00xw:0.708xh;0,0.0457xh&resize=480:*"
-              ></img>
+                src={
+                  preview ||
+                  currentUser?.avatar ||
+                  'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                }
+              />
             </li>
             <li>
-              <button type="file" className="Resetbtn">
-                Change Avatar
-              </button>
+              <form onSubmit={handleAvatar}>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="Resetbtn"
+                  onChange={handleImageSelect}
+                />
+                <br />
+                <button type="submit">submit</button>
+              </form>
             </li>
             <li>
               <button type="submit" className="Resetbtn">
@@ -52,7 +127,11 @@ const EditProfile = () => {
               </button>
             </li>
             <li>
-              <button type="submit" className="Deletebtn">
+              <button
+                type="submit"
+                className="Deletebtn"
+                onClick={handleDelete}
+              >
                 Delete Account
               </button>
             </li>

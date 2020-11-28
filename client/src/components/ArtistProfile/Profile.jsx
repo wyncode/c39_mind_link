@@ -57,7 +57,11 @@ const Profile = () => {
               ></img>
             </div>
           </div>
-          <div className="comments">Comments</div>
+          <div className="comments">
+            Comments
+            <textarea className="" type="text"></textarea>
+            <button>submit</button>
+          </div>
         </div>
       </div>
     </>
