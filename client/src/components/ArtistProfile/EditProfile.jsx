@@ -7,9 +7,40 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const EditProfile = () => {
-  const { setCurrentUser } = useContext(AppContext);
+  const { currentUser, setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState('');
   const history = useHistory();
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  const handleImageSelect = (e) => {
+    setPreview(URL.createObjectURL(e.target.files[0]));
+    setImage(e.target.files[0]);
+  };
+  console.log(preview);
+
+  const handleAvatar = async (e) => {
+    e.preventDefault();
+    const avatar = new FormData();
+
+    avatar.append('avatar', image, image?.name);
+
+    try {
+      const updatedUser = await axios({
+        method: 'POST',
+        url: '/api/users/avatar',
+        data: avatar,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
+      swal('Sweet!', 'Your image has been updated!', 'success');
+    } catch (error) {
+      console.log(error);
+      swal('Error', 'Oops, something went wrong.');
+    }
+  };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -28,6 +59,39 @@ const EditProfile = () => {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      const willDelete = await swal({
+        title: 'Are you sure?',
+        text: 'Once deleted, you will not be able to recover this account!',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true
+      });
+      if (willDelete) {
+        try {
+          await axios({
+            method: 'DELETE',
+            url: '/api/users',
+            withCredentials: true
+          });
+          swal('Poof! Your account has been deleted!', {
+            icon: 'success'
+          });
+          sessionStorage.removeItem('user');
+          setCurrentUser(null);
+          history.push('/');
+        } catch (error) {
+          swal(`Oops!`, 'Something went wrong.');
+        }
+      } else {
+        swal('Your account is safe!');
+      }
+    } catch (error) {
+      swal(`Oops!`, 'Something went wrong.');
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -38,13 +102,24 @@ const EditProfile = () => {
               <img
                 alt="User"
                 className="be6sR"
-                src="https://scontent-mia3-1.cdninstagram.com/v/t51.2885-19/s150x150/116426504_1186323501702731_3953026223783822984_n.jpg?_nc_ht=scontent-mia3-1.cdninstagram.com&amp;_nc_ohc=i4TfFI981w4AX855Lf-&amp;tp=1&amp;oh=ec381ebad1a65853271deb77e412aeae&amp;oe=5FE3E0E9"
-              ></img>
+                src={
+                  preview ||
+                  currentUser?.avatar ||
+                  'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                }
+              />
             </li>
             <li>
-              <button type="file" className="Resetbtn">
-                Change Avatar
-              </button>
+              <form onSubmit={handleAvatar}>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="Resetbtn"
+                  onChange={handleImageSelect}
+                />
+                <br />
+                <button type="submit">submit</button>
+              </form>
             </li>
             <li>
               <button type="submit" className="Resetbtn">
@@ -52,7 +127,11 @@ const EditProfile = () => {
               </button>
             </li>
             <li>
-              <button type="submit" className="Deletebtn">
+              <button
+                type="submit"
+                className="Deletebtn"
+                onClick={handleDelete}
+              >
                 Delete Account
               </button>
             </li>
@@ -124,7 +203,7 @@ const EditProfile = () => {
                 <input
                   type="text"
                   placeholder="@JohnRoss"
-                  name="socialmedia"
+                  name="socialMedia"
                   onChange={handleChange}
                 />
               </div>
