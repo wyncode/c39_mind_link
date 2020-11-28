@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import './ProjectList.css';
 import axios from 'axios';
+import Navbar from '../NavBar/Navbar';
 
 const ProjectList = () => {
   const [project, setProject] = useState([]);
@@ -19,7 +20,8 @@ const ProjectList = () => {
   }, [project]);
 
   return (
-    <div>
+    <>
+      <Navbar />
       <div>Add sorting feature</div>
       <div>Add findbyID to link to detail page</div>
       <div>Add styling</div>
@@ -34,7 +36,7 @@ const ProjectList = () => {
           );
         })}
       </div>
-    </div>
+    </>
   );
 };
 
