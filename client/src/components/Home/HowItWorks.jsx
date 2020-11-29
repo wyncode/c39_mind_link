@@ -10,42 +10,45 @@ const HowItWorks = () => {
         <div className="hiw-card">
           <div className="hiw-title">
             <i className="fas fa-headphones card-icon"></i>
-            <h3 className="hiw-card-h3">Subheader</h3>
+            <h3 className="hiw-card-h3">Collaborate</h3>
           </div>
           <div className="hiw-perks">
             <p className="hiw_card_p">
-              Lorem ipsum dolor sit amet, ne patrioque referrentur pro. His
-              partem integre discere cu. Eu mel persius tractatos, dicit commodo
-              reprimique per no. Eu mea civibus aliquando. Utinam epicuri
-              sadipscing et mel.
+              Whether it's a guitar riff, drum loop, a vocal a cappella or
+              lyrics - just start your own music collaboration project and
+              upload your idea. Then, wait for others to join in, or send
+              invites to other members. You can also jump in on any other open
+              project by uploading your idea as an audition.
             </p>
           </div>
         </div>
         <div className="hiw-card">
           <div className="hiw-title">
             <i className="fas fa-microphone card-icon"></i>
-            <h3 className="hiw-card-h3">Subheader</h3>
+            <h3 className="hiw-card-h3">Manage</h3>
           </div>
           <div className="hiw-perks">
             <p className="hiw_card_p">
-              Lorem ipsum dolor sit amet, ne patrioque referrentur pro. His
-              partem integre discere cu. Eu mel persius tractatos, dicit commodo
-              reprimique per no. Eu mea civibus aliquando. Utinam epicuri
-              sadipscing et mel.
+              Upload tracks, review auditions, discuss changes, and much more.
+              Clearly set out and agree copyright shares for your song's
+              composition and sound recording. Protect your published
+              collaborations with audio watermarking or assign a pre-approved
+              creative commons license.
             </p>
           </div>
         </div>
         <div className="hiw-card">
           <div className="hiw-title">
             <i className="fas fa-volume-up card-icon"></i>
-            <h3 className="hiw-card-h3">Subheader</h3>
+            <h3 className="hiw-card-h3">Connect</h3>
           </div>
           <div className="hiw-perks">
             <p className="hiw_card_p">
-              Lorem ipsum dolor sit amet, ne patrioque referrentur pro. His
-              partem integre discere cu. Eu mel persius tractatos, dicit commodo
-              reprimique per no. Eu mea civibus aliquando. Utinam epicuri
-              sadipscing et mel.
+              Members can share thoughts, ideas, or help others by posting to
+              the community forum. A treasure trove of shared ideas, original
+              audio, and even cover art for use in your projects. Need help? No
+              problem, there's always a mentor around to answer any questions
+              and help you get started.
             </p>
           </div>
         </div>
