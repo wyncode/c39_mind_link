@@ -38,10 +38,14 @@ const EditProfile = () => {
         }
       });
       setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
-      swal('Sweet!', 'Your image has been updated!', 'success');
+      swal('Sweet!', 'Your image has been updated!', 'success', {
+        icon: 'success'
+      });
     } catch (error) {
       console.log(error);
-      swal('Error', 'Oops, something went wrong.');
+      swal('Error', 'Oops, something went wrong.', {
+        icon: 'error'
+      });
     }
   };
 
@@ -58,7 +62,9 @@ const EditProfile = () => {
       console.log(response.data);
       history.push('/profile');
     } catch (error) {
-      swal('SignUp Error: ', error.toString());
+      swal('SignUp Error: ', error.toString(), {
+        icon: 'error'
+      });
     }
   };
 
@@ -85,13 +91,19 @@ const EditProfile = () => {
           setCurrentUser(null);
           history.push('/');
         } catch (error) {
-          swal(`Oops!`, 'Something went wrong.');
+          swal(`Oops!`, 'Something went wrong.', {
+            icon: 'error'
+          });
         }
       } else {
-        swal('Your account is safe!');
+        swal('Your account is safe!', {
+          icon: 'success'
+        });
       }
     } catch (error) {
-      swal(`Oops!`, 'Something went wrong.');
+      swal(`Oops!`, 'Something went wrong.', {
+        icon: 'error'
+      });
     }
   };
 

@@ -36,7 +36,9 @@ const ProjectForm = () => {
         withCredentials: true,
         data: collabFormData
       });
-      swal('New Project!', 'Your project has been added!', 'success');
+      swal('New Project!', 'Your project has been added!', {
+        icon: 'success'
+      });
       setCollabFormData(emptyFormState);
       form.reset();
     } catch (error) {

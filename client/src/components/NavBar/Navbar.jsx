@@ -25,9 +25,9 @@ const Navbar = () => {
       });
       sessionStorage.removeItem('users');
       setCurrentUser(null);
-      swal(response.data.message, 'You have signed out!').then(() =>
-        history.push('/')
-      );
+      swal(response.data.message, 'You have signed out!', {
+        icon: 'success'
+      }).then(() => history.push('/'));
     } catch (error) {
       console.log(error);
     }
@@ -92,7 +92,7 @@ const Navbar = () => {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Collaborations
+                Projects
               </Link>
             </li>
             <li className="nav-item">

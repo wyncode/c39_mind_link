@@ -29,7 +29,9 @@ const Login = () => {
       history.push('/profile');
     } catch (error) {
       console.log(error);
-      swal(`Oops!`, 'Something went wrong.');
+      swal(`Oops!`, 'Something went wrong.', {
+        icon: 'error'
+      });
     }
   };
   return (
@@ -44,7 +46,7 @@ const Login = () => {
             </label>
             <input
               className="FormInput"
-              style={{ width: '100%' }}
+              style={{ width: '100%', margin: '0', padding: '15px' }}
               type="text"
               name="artistName"
               required

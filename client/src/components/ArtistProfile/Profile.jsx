@@ -14,7 +14,9 @@ const Profile = () => {
       const response = await axios.get('/api/users/me');
       setProfileData(response.data);
     } catch (error) {
-      swal('Error: ', error.toString());
+      swal('Error: ', error.toString(), {
+        icon: 'error'
+      });
     }
   };
 
