@@ -7,8 +7,8 @@ const HeroSection = () => {
   return (
     <div className="hero-container">
       {/* <video src='/client/public/videos/video-1.mp4' autoPlay loop muted /> */}
-      <h1>Hero Section Header</h1>
-      <p>Hero Section Subheader</p>
+      <h1>MindLink</h1>
+      <p>Start your own music collaboration project and upload your idea.</p>
       <div className="hero-btns">
         <SignUpButton
           className="btns"
