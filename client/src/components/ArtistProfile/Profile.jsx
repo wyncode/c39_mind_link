@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import './Profile.css';
 import NavBar from '../NavBar/Navbar';
+import { AppContext } from '../../context/AppContext';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState('');
+  const { currentUser } = useContext(AppContext);
+
   const fetchProfile = async () => {
     try {
       const response = await axios.get('/api/users/me');
@@ -19,8 +22,6 @@ const Profile = () => {
     fetchProfile();
   }, [profileData]);
 
-  //{profileData.firstName}
-
   return (
     <>
       <NavBar />
@@ -29,16 +30,17 @@ const Profile = () => {
           Banner
           <div className="infoarea">
             <div className="userInfo">
-              {profileData.firstName} {profileData.lastName}
+              {profileData?.firstName ? `${profileData.firstName} ` : ''}
+              {profileData?.lastName ? profileData.lastName : ''}
             </div>
-            <div className="social">{profileData.socialMedia}</div>
+            <div className="social">{`${profileData.socialMedia}`}</div>
           </div>
           <div className="photo">
             <img
               alt="User"
               className="profilephoto"
               id="user"
-              src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/drake-attends-the-top-boy-uk-premiere-at-hackney-news-photo-1586363414.jpg?crop=1.00xw:0.708xh;0,0.0457xh&resize=480:*"
+              src={currentUser?.avatar}
             ></img>
           </div>
           <div className="bio">

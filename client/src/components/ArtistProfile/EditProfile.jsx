@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import NavBar from '../NavBar/Navbar';
 import './EditProfile.css';
 import { AppContext } from '../../context/AppContext';
@@ -10,6 +10,40 @@ const EditProfile = () => {
   const { currentUser, setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState('');
   const history = useHistory();
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const handleImageSelect = (e) => {
+    setPreview(URL.createObjectURL(e.target.files[0]));
+    setImage(e.target.files[0]);
+  };
+
+  useEffect(() => {
+    if (currentUser) {
+      const { firstName, lastName, socialMedia, email } = currentUser;
+      setFormData({ ...formData, firstName, lastName, socialMedia, email });
+    }
+  }, []);
+
+  const handleAvatar = async (e) => {
+    e.preventDefault();
+    const avatar = new FormData();
+    avatar.append('avatar', image, image.name);
+    try {
+      const updatedUser = await axios({
+        method: 'POST',
+        url: '/api/users/avatar',
+        data: avatar,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
+      swal('Sweet!', 'Your image has been updated!', 'success');
+    } catch (error) {
+      console.log(error);
+      swal('Error', 'Oops, something went wrong.');
+    }
+  };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -110,167 +144,166 @@ const EditProfile = () => {
         <div className="rightside">
           <div className="topdiv">
             <h1 className="basicinfo">Basic Info</h1>
-            <button className="topbtns" onSubmit={handleEditProfile}>
+            <button className="topbtns" onClick={handleEditProfile}>
               Save
             </button>
             <button className="topbtnc">Cancel</button>
           </div>
-          <form onSubmit={handleEditProfile}>
-            <div className="ruly">
-              <div className="myfname">
-                <label>Artist Name</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="e.g. JohnRoss"
-                  name="artistName"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>First Name</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder=" e.g. John"
-                  name="firstName"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>Last Name</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="e.g. Ross"
-                  name="lastName"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>Email</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="e.g. JohnRoss@gmail.com"
-                  name="email"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>Social Media</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="@JohnRoss"
-                  name="socialMedia"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>About Me</label>
-              </div>
-              <div>
-                <textarea
-                  type="text"
-                  placeholder="Write about yourself"
-                  name="bio"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="myfname">
-                <label>Current Projects</label>
-                <ul>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Project 1"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Project 2"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Project 3"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Project 4"
-                      onChange={handleChange}
-                    />
-                  </li>
-                </ul>
-              </div>
-              <div className="myfname">
-                <label>My Music</label>
-                <ul>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Song 1"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Song 2"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Song 3"
-                      onChange={handleChange}
-                    />
-                  </li>
-                  <li className="plist">
-                    {' '}
-                    <input
-                      type="URL"
-                      placeholder="Song 4"
-                      onChange={handleChange}
-                    />
-                  </li>
-                </ul>
-              </div>
-              <div className="lower">
-                <button className="topbtns" onSubmit={handleEditProfile}>
-                  Save
-                </button>
-                <button className="topbtnc">Cancel</button>
-              </div>
+          <div className="ruly">
+            <div className="myfname">
+              <label>Artist Name</label>
             </div>
-          </form>
+            <div>
+              <input
+                type="text"
+                placeholder="e.g. JohnRoss"
+                name="artistName"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>First Name</label>
+            </div>
+            <div>
+              <input
+                value={formData?.firstName}
+                type="text"
+                placeholder=" e.g. John"
+                name="firstName"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>Last Name</label>
+            </div>
+            <div>
+              <input
+                value={formData?.lastName}
+                type="text"
+                placeholder="e.g. Ross"
+                name="lastName"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>Email</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="e.g. JohnRoss@gmail.com"
+                name="email"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>Social Media</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="@JohnRoss"
+                name="socialMedia"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>About Me</label>
+            </div>
+            <div>
+              <textarea
+                type="text"
+                placeholder="Write about yourself"
+                name="bio"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="myfname">
+              <label>Current Projects</label>
+              <ul>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Project 1"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Project 2"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Project 3"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Project 4"
+                    onChange={handleChange}
+                  />
+                </li>
+              </ul>
+            </div>
+            <div className="myfname">
+              <label>My Music</label>
+              <ul>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Song 1"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Song 2"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Song 3"
+                    onChange={handleChange}
+                  />
+                </li>
+                <li className="plist">
+                  {' '}
+                  <input
+                    type="URL"
+                    placeholder="Song 4"
+                    onChange={handleChange}
+                  />
+                </li>
+              </ul>
+            </div>
+            <div className="lower"></div>
+          </div>
+          <button className="topbtns" onClick={handleEditProfile}>
+            Save
+          </button>
+          <button className="topbtnc">Cancel</button>
         </div>
       </div>
     </>
