@@ -16,7 +16,9 @@
 #projectCardAvatar {
   width: 333px;
   height: 333px;
+  object-fit: cover;
   border-bottom: 3px solid #015e73;
+
 }
 
 #projectCardName {

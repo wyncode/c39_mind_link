@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 User = require('./user.js');
+Comment = require('./comment.js');
 
 const projectSchema = new mongoose.Schema(
   {
@@ -11,15 +12,21 @@ const projectSchema = new mongoose.Schema(
     talentNeeded: { type: String, required: true },
     genre: { type: String, required: true },
     mood: { type: String, required: true },
-    // comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     projectAvatar: {
       type: String,
       default: 'https://files.willkennedy.dev/wyncode/wyncode.png'
     },
-    mindlinkpProfile: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    mindlinkProfile: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   },
   { timestamps: true }
 );
+
+projectSchema.virtual('comment', {
+  ref: 'Comment',
+  localField: 'comments',
+  foreignField: '_id'
+});
 
 const Project = mongoose.model('Project', projectSchema);
 

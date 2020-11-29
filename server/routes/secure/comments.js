@@ -1,10 +1,10 @@
-const router = require('express').Router(),
+const router = require('express').Router({ mergeParams: true }),
   {
-    getCommentsForAProject,
-    createComment
+    getCommentsbyProject,
+    createCommentbyProject
   } = require('../../controllers/comments');
 
-router.get('/projects/:id/comments', getCommentsForAProject);
-router.post('/', createComment);
+router.get('/comments', getCommentsbyProject);
+router.post('/project/:id/comments', createCommentbyProject);
 
 module.exports = router;

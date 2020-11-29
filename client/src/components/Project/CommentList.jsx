@@ -1,44 +1,36 @@
 import React from 'react';
-// import { useContext, useEffect } from 'react';
-// import { AppContext } from '../../context/AppContext';
-// import axios from 'axios';
 import CommentForm from './CommentForm';
 import Comment from './Comment';
 import './CommentList.css';
-
-// useEffect(()=> {
-//   Axios.get('/api/users/collaboration/details')
-// })
-// const Comment = ({ comment }) => {
-// const { search } = useContext(AppContext);
-
-// const filteredComments = comments?.filter((comment) => {
-//   return comment.comment.toLowerCase();
-// return comment.comment.toLowerCase().includes(search.toLowerCase());
-// });
-// return comment.description.toLowerCase().includes(search.toLowerCase());
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const CommentList = ({ specProject }) => {
-  // const { comments, setComments } = useContext(AppContext);
+  const [comments, setComments] = useState([]);
+  let { id } = useParams();
 
-  // useEffect(() => {
-  //   axios
-  //     //need to add route
-  //     .get('./')
-  //     .then((response) => {
-  //       setComments(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // });
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const projectComments = await axios.get(`/api/projects/comments`);
+        setComments(projectComments.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchComments();
+  }, [comments, id]);
+  console.log('spr', specProject);
 
   return (
     <div>
       <CommentForm specProject={specProject} />
-      <Comment />
-
-      {/* <Comment comments={comments} /> */}
+      <div id="commentList">
+        {comments.map((comment) => {
+          return <Comment key={comment._id} comments={comment} />;
+        })}
+      </div>
     </div>
   );
 };

@@ -7,13 +7,15 @@ import './ProjectForm.css';
 
 const emptyFormState = {
   projectName: '',
-  projectDesc: '',
-  audition: '',
+  projectDescription: '',
+  projectBrief: '',
+  auditions: '',
+  status: '',
   started: '',
   talentNeeded: '',
   genre: '',
   mood: '',
-  avatar: ''
+  projectAvatar: ''
 };
 
 const ProjectForm = () => {
@@ -32,7 +34,7 @@ const ProjectForm = () => {
     try {
       await axios({
         method: 'POST',
-        url: 'api/projects',
+        url: '/api/projects',
         withCredentials: true,
         data: collabFormData
       });
@@ -73,8 +75,19 @@ const ProjectForm = () => {
               className="FormInput"
               required
               type="text"
-              onChange={handleChange('projectDesc')}
-              value={collabFormData.projectDesc}
+              onChange={handleChange('projectDescription')}
+              value={collabFormData.projectDescription}
+            />
+            <label className="FormLabel" htmlFor="for">
+              Project Brief
+            </label>
+            <input
+              style={{ width: '100%' }}
+              className="FormInput"
+              required
+              type="text"
+              onChange={handleChange('projectBrief')}
+              value={collabFormData.projectBrief}
             />
             <label className="FormLabel" htmlFor="for">
               Audition Date{' '}
@@ -84,8 +97,8 @@ const ProjectForm = () => {
               className="FormInput"
               required
               type="date"
-              onChange={handleChange('audition')}
-              value={collabFormData.audition}
+              onChange={handleChange('auditions')}
+              value={collabFormData.auditions}
             />
             <label className="FormLabel" htmlFor="for">
               Start Date
@@ -156,10 +169,9 @@ const ProjectForm = () => {
               className="FormInput"
               required
               type="text"
-              onChange={handleChange('avatar')}
-              value={collabFormData.avatar}
+              onChange={handleChange('projectAvatar')}
+              value={collabFormData.projectAvatar}
             />
-
             <button
               className="FormButton"
               type="submit"

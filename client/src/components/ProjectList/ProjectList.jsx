@@ -34,13 +34,6 @@ const ProjectList = () => {
     console.log('sorted 2', projects);
   };
 
-  // const sortStarted3 = () => {
-  //   const array = projects.sort((a, b) =>
-  //     b.projectName.localeCompare(a.projectName) ? 1 : -1
-  //   );
-  //   setProjects(array);
-  //   console.log('sorted 3', projects);
-  // };
 
   return (
     <div id="projectListContainer">
