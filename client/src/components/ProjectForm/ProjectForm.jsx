@@ -90,35 +90,24 @@ const ProjectForm = () => {
               value={collabFormData.projectBrief}
             />
             <label className="FormLabel" htmlFor="for">
-              Audition{' '}
+              Audition Date{' '}
             </label>
             <input
               style={{ width: '100%' }}
               className="FormInput"
               required
-              type="text"
+              type="date"
               onChange={handleChange('auditions')}
               value={collabFormData.auditions}
             />
             <label className="FormLabel" htmlFor="for">
-              Status
+              Start Date
             </label>
             <input
               style={{ width: '100%' }}
               className="FormInput"
               required
-              type="text"
-              onChange={handleChange('status')}
-              value={collabFormData.status}
-            />
-            <label className="FormLabel" htmlFor="for">
-              Started
-            </label>
-            <input
-              style={{ width: '100%' }}
-              className="FormInput"
-              required
-              type="text"
+              type="date"
               onChange={handleChange('started')}
               value={collabFormData.started}
             />
@@ -136,14 +125,31 @@ const ProjectForm = () => {
             <label className="FormLabel" htmlFor="for">
               Genre
             </label>
-            <input
+            <select
               style={{ width: '100%' }}
               className="FormInput"
-              required
-              type="text"
               onChange={handleChange('genre')}
               value={collabFormData.genre}
-            />
+            >
+              {[
+                'Classical',
+                'Country',
+                'EDM',
+                'Hip-hop',
+                'Indie rock',
+                'Jazz',
+                'K-pop',
+                'Metal',
+                'Oldies',
+                'Pop',
+                'Rap',
+                'R&B',
+                'Rock',
+                'Techno'
+              ].map((genre) => (
+                <option key={genre}>{genre}</option>
+              ))}
+            </select>
             <label className="FormLabel" htmlFor="for">
               Mood
             </label>
@@ -156,7 +162,7 @@ const ProjectForm = () => {
               value={collabFormData.mood}
             />
             <label className="FormLabel" htmlFor="for">
-              Avatar
+              Project Image
             </label>
             <input
               style={{ width: '100%' }}

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 Project = require('./project');
+User = require('./user.js');
+
 
 const commentSchema = new mongoose.Schema(
   {
@@ -10,6 +12,8 @@ const commentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 // commentSchema.virtual('project', {  ref: 'Project',  localField: 'project',  foreignField: '_id'});
+// commentSchema.virtual('profile', {  ref: 'User',  localField: 'mindlinkpProfile',  foreignField: 'artistName'});
+
 
 const Comment = mongoose.model('Comment', commentSchema);
 

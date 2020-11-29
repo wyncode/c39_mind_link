@@ -22,27 +22,28 @@
   display: flex;
   align-items: center;
   margin-bottom: 3rem;
+  padding: 2rem;
+  border: 4px white dotted;
   /* flex-direction: column; */
 }
 
 /* #listTextContainer {
-  display: flex;
-  flex-direction: column;
+  border: 2px white dashed;
 } */
 
 .listImage {
-  /* width: 40rem; */
-  height: 40rem;
+  width: 40rem;
+  /* height: 40rem; */
 }
 
 .listText {
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   width: 33vw;
   padding: 1.5rem;
-  line-height: 2;
+  line-height: 1.5;
   text-align: justify;
   margin-left: 4rem;
 }

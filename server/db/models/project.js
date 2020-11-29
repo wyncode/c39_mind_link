@@ -8,7 +8,6 @@ const projectSchema = new mongoose.Schema(
     projectDescription: { type: String, required: true },
     projectBrief: { type: String, required: true },
     auditions: { type: String, required: true },
-    status: { type: String, required: true },
     started: { type: String, required: true },
     talentNeeded: { type: String, required: true },
     genre: { type: String, required: true },
