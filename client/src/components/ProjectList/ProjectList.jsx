@@ -16,7 +16,7 @@ const ProjectList = () => {
       }
     };
     fetchProjects();
-  }, [project]);
+  }, [project, setProject]);
 
   return (
     <div>

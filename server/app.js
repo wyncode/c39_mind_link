@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/*', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
 app.use('/api/projects', projectRouter);
-app.use('/api/comments', commentRouter);
+app.use('/api/projects', commentRouter);
 
 // Handle React routing, return all requests to React app
 if (process.env.NODE_ENV === 'production') {

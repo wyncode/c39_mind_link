@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
+import { useParams } from 'react-router-dom';
 import './CommentForm.css';
 
 const CommentForm = ({ specProject }) => {
   const [commentData, setCommentData] = useState({});
   const { setLoading } = useContext(AppContext);
+
+  let { id } = useParams();
 
   const handleChange = (field) => (evt) => {
     setCommentData({ ...commentData, [field]: evt.target.value });
@@ -17,10 +20,9 @@ const CommentForm = ({ specProject }) => {
     try {
       await axios({
         method: 'POST',
-        url: '/api/comments/projects/:id/comments',
+        url: `/api/projects/project/${id}/comments`,
         data: commentData
       });
-      console.log(commentData);
       form.reset();
     } catch (error) {
       console.log(error);
@@ -49,17 +51,21 @@ const CommentForm = ({ specProject }) => {
             <div id="commentFormContainer">
               <textarea
                 id="formComment"
-                name="formComment"
+                name="comment"
                 type="text"
                 rows="3"
                 cols="120"
                 placeholder="Enter your comment here..."
                 required={true}
-                onChange={handleChange('formComment')}
+                onChange={handleChange('comment')}
               />
 
               <div>
-                <button className="submitButton" type="submit">
+                <button
+                  className="submitButton"
+                  type="submit"
+                  onSubmit={handleCommentSubmission}
+                >
                   Submit
                 </button>
               </div>

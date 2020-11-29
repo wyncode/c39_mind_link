@@ -13,6 +13,7 @@
 #projectCardAvatar {
   width: 333px;
   height: 333px;
+  object-fit: cover;
 }
 
 #projectCardName {

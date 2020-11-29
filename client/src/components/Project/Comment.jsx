@@ -13,18 +13,9 @@ const Comment = ({ comments }) => {
               alt="avatar"
             />
           </div>
-
-          <form>
-            <div id="commentFormContainer">
-              <textarea
-                id="formComment"
-                name="formComment"
-                type="text"
-                rows="3"
-                cols="120"
-              />
-            </div>
-          </form>
+          <div>
+            <div id="commentFormContainer">Comment: {comments.comment}</div>
+          </div>
         </div>
       </div>
     </div>

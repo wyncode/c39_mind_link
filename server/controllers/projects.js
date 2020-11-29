@@ -1,12 +1,15 @@
 const Project = require('../db/models/project');
+
 mongoose = require('mongoose');
 
 exports.createProject = async (req, res) => {
-  const project = req.body;
+  const project = await new Project({
+    ...req.body,
+    mindlinkProfile: req.user._id
+  });
   try {
-    const newProject = await new Project(project);
-    await newProject.save();
-    res.status(201).json(newProject);
+    project.save();
+    res.status(201).json(project);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -14,7 +17,9 @@ exports.createProject = async (req, res) => {
 
 exports.getProjects = async (req, res) => {
   Project.find()
+    // .populate('comments')
     .then((posts) => res.json(posts))
+    // console.log('posts:', posts)
     .catch((err) => res.status(500).json('Error: ' + err));
 };
 
@@ -24,10 +29,14 @@ exports.getProjectDetailsById = async (req, res) => {
     return res.status(400).json({ message: 'not a valid project' });
 
   try {
-    const project = await Project.findOne({ _id });
+    const project = await Project.findOne({ _id }).populate('comments');
     if (!project) return res.status(400).json({ message: 'Project not found' });
     res.status(200).json(project);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
+
+// exports.getCommentsbyProject
+
+// exports.createCommentbyProject

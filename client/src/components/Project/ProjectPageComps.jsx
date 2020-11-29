@@ -8,7 +8,7 @@ import './ProjectPageComps.css';
 
 const ProjectPageComps = () => {
   const [specificProject, setSpecificProject] = useState({});
-  const [comments, setComments] = useState({});
+  // const [comments, setComments] = useState({});
 
   let { id } = useParams();
 
@@ -22,18 +22,19 @@ const ProjectPageComps = () => {
       }
     };
     fetchSpecificProjects();
-    const fetchComments = async () => {
-      try {
-        const projectComments = await axios.get(
-          `/api/comments/projects/${id}/comments`
-        );
-        setComments(projectComments.data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    fetchComments();
-  }, [id, comments]);
+
+    // const fetchComments = async () => {
+    //   try {
+    //     const projectComments = await axios.get(
+    //       `/api/projects/project/${id}/comments`
+    //     );
+    //     setComments(projectComments.data);
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // };
+    // fetchComments();
+  }, [id]);
 
   return (
     <div>

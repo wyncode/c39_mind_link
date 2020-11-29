@@ -13,6 +13,7 @@
 #picContainer {
   width: 67%;
   height: 40px;
+  object-fit: cover;
 }
 
 #projectPic {
