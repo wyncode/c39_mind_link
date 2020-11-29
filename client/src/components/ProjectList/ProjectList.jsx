@@ -65,13 +65,9 @@ const ProjectList = () => {
             any other open project by uploading your idea as an audition.
           </p>
           <p id="p2" className="listText">
-            On MindLink, your collaborators may be located in different
-            countries and therefore will be waking, working, eating, writing,
-            recording, and sleeping at different times of the day. MindLink
-            allows members to upload and manage their work in a collaborative
-            project environment where others can later upload and download
-            tracks and work on them at their own convenience, at any time of the
-            day or night.
+            MindLink allows members to upload and manage their work in a
+            collaborative project environment where others can later upload and
+            download tracks and work on them at their own convenience.
           </p>
         </div>
       </div>
