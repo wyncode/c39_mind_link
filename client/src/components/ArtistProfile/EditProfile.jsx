@@ -311,3 +311,5 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
+
+//adding this for the push
