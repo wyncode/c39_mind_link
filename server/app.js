@@ -7,7 +7,8 @@ const express = require('express'),
   openRoutes = require('./routes/open'),
   userRouter = require('./routes/secure/users'),
   projectRouter = require('./routes/secure/projects'),
-  commentRouter = require('./routes/secure/comments');
+  commentRouter = require('./routes/secure/comments'),
+  fileUpload = require('express-fileupload');
 
 //Middleware
 app.use(express.json());
@@ -15,6 +16,13 @@ app.use(express.json());
 // Unauthenticated routes
 app.use('/api', openRoutes);
 app.use(cookieParser());
+
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: '/tmp/images'
+  })
+);
 
 // Serve any static files
 if (process.env.NODE_ENV === 'production') {
