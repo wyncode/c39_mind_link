@@ -4,16 +4,20 @@
   display: flex;
   flex-direction: column;
   width: 333px;
-  border: 1px solid grey;
-  border-radius: 3px;
+  border: 1px solid #015e73;
+  border-radius: 5px;
   font-family: 'Raleway', sans-serif;
   margin: 20px;
+  background-color: #00758f;
+  height: 36rem;
 }
 
 #projectCardAvatar {
   width: 333px;
   height: 333px;
   object-fit: cover;
+  border-bottom: 3px solid #015e73;
+
 }
 
 #projectCardName {
@@ -24,13 +28,18 @@
 }
 #projectCardDesc {
   font-family: 'Raleway', sans-serif;
-  margin: 7px 5px;
+  margin: 9px 5px;
+  word-wrap: break-word;
+  height: 4rem;
 }
+
 #projectCardOwner {
   font-family: 'Raleway', sans-serif;
+  padding-top: 1.5rem;
   margin: 7px 5px;
 }
 #projectCardLink {
   font-family: 'Raleway', sans-serif;
   margin: 7px 5px;
+  font-size: 1.5rem;
 }

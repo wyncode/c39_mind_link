@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">= 14.0.0"
+  },
   "dependencies": {
     "@sendgrid/mail": "^7.4.0",
     "axios": "^0.21.0",
