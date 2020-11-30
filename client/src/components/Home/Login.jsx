@@ -28,6 +28,7 @@ const Login = () => {
       console.log(sessionStorage);
       history.push('/profile');
     } catch (error) {
+      console.log('This error');
       console.log(error);
       swal(`Oops!`, 'Something went wrong.', {
         icon: 'error'
