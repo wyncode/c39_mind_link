@@ -14,7 +14,7 @@ const ResetPasswords = () => {
               Artist Name
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '100%', margin: 'auto', padding: '4%' }}
               className="FormInput"
               type="text"
               required
