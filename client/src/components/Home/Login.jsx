@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleLogin = async (e) => {
@@ -25,7 +25,7 @@ const Login = () => {
       setCurrentUser(response.data);
       //setting the user storage to a name called user(key) and value of the object os the response
       sessionStorage.setItem('user', response.data);
-      console.log(sessionStorage);
+      // console.log(sessionStorage);
       history.push('/profile');
     } catch (error) {
       console.log('This error');

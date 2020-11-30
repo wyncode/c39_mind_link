@@ -17,9 +17,7 @@ exports.createProject = async (req, res) => {
 
 exports.getProjects = async (req, res) => {
   Project.find()
-    // .populate('comments')
     .then((posts) => res.json(posts))
-    // console.log('posts:', posts)
     .catch((err) => res.status(500).json('Error: ' + err));
 };
 
@@ -36,7 +34,3 @@ exports.getProjectDetailsById = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
-// exports.getCommentsbyProject
-
-// exports.createCommentbyProject

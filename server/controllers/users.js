@@ -164,7 +164,7 @@ exports.uploadAvatar = async (req, res) => {
       req.files.avatar.tempFilePath
     );
     req.user.avatar = response.secure_url;
-    console.log(req.user.avatar);
+    // console.log(req.user.avatar);
     await req.user.save();
     res.json(response);
   } catch (error) {
