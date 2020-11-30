@@ -11,9 +11,7 @@ const SignUpSection = () => {
           <h2>Sign Up Today</h2>
           <p>Collaborate With Other Artists</p>
           <Link to="/sign-up">
-            <button className="suSection__btn">
-              <a href="/sign-up">Sign Up</a>
-            </button>
+            <button className="suSection__btn">Sign Up</button>
           </Link>
         </div>
         <div className="suSection__img--container">

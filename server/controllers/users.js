@@ -52,7 +52,9 @@ exports.loginUser = async (req, res) => {
 };
 
 //Get current user
-exports.getCurrentUser = async (req, res) => res.json(req.user);
+exports.getCurrentUser = async (req, res) => {
+  res.json(req.user);
+};
 
 //Update a user
 exports.updateCurrentUser = async (req, res) => {
@@ -98,18 +100,6 @@ exports.logoutUser = async (req, res) => {
     await req.user.save();
     res.clearCookie('jwt');
     res.json({ message: 'Logged out' });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
-
-//Logout all devices
-exports.logoutAllDevices = async (req, res) => {
-  try {
-    req.user.tokens = [];
-    await req.user.save();
-    res.clearCookie('jwt');
-    res.json({ message: 'logged out from all devices!' });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

@@ -19,7 +19,8 @@ const EditProfile = () => {
   };
 
   useEffect(() => {
-    if (currentUser && formData) {
+    if (currentUser) {
+      console.log(currentUser);
       const {
         firstName,
         lastName,
@@ -37,7 +38,6 @@ const EditProfile = () => {
         myMusicFour
       } = currentUser;
       setFormData({
-        ...formData,
         firstName,
         lastName,
         socialMedia,
@@ -54,7 +54,7 @@ const EditProfile = () => {
         myMusicFour
       });
     }
-  }, [currentUser, formData]);
+  }, [currentUser]);
 
   const handleAvatar = async (e) => {
     e.preventDefault();
@@ -159,6 +159,7 @@ const EditProfile = () => {
             <li>
               <form onSubmit={handleAvatar}>
                 <input
+                  name="avatarfile"
                   type="file"
                   accept="image/*"
                   className="Resetbtn"
@@ -203,10 +204,10 @@ const EditProfile = () => {
             </div>
             <div>
               <input
-                value={formData?.artistName}
                 type="text"
-                placeholder="e.g. JohnRoss"
                 name="artistName"
+                value={formData?.artistName}
+                placeholder="e.g. JohnRoss"
                 onChange={handleChange}
               />
             </div>
@@ -242,10 +243,10 @@ const EditProfile = () => {
             </div>
             <div>
               <input
-                value={formData?.email}
                 type="text"
-                placeholder="e.g. JohnRoss@gmail.com"
                 name="email"
+                value={formData?.email}
+                placeholder="e.g. JohnRoss@gmail.com"
                 onChange={handleChange}
               />
             </div>
@@ -294,6 +295,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    name="currentProjectTwo"
+                    value={formData?.currentProjectTwo}
                     type="URL"
                     placeholder="Project 2"
                     onChange={handleChange}
@@ -302,6 +305,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    name="currentProjectThree"
+                    value={formData?.currentProjectThree}
                     type="URL"
                     placeholder="Project 3"
                     onChange={handleChange}
@@ -310,6 +315,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    name="currentProjectFour"
+                    value={formData?.currentProjectFou}
                     type="URL"
                     placeholder="Project 4"
                     onChange={handleChange}
@@ -324,7 +331,7 @@ const EditProfile = () => {
                   {' '}
                   <input
                     value={formData?.myMusicOne}
-                    name="myMusic"
+                    name="myMusicOne"
                     type="URL"
                     placeholder="Song 1"
                     onChange={handleChange}
@@ -334,7 +341,7 @@ const EditProfile = () => {
                   {' '}
                   <input
                     value={formData?.myMusicTwo}
-                    name="myMusic"
+                    name="myMusicTwo"
                     type="URL"
                     placeholder="Song 2"
                     onChange={handleChange}
@@ -344,7 +351,7 @@ const EditProfile = () => {
                   {' '}
                   <input
                     value={formData?.myMusicThree}
-                    name="myMusic"
+                    name="myMusicThree"
                     type="URL"
                     placeholder="Song 3"
                     onChange={handleChange}
@@ -354,7 +361,7 @@ const EditProfile = () => {
                   {' '}
                   <input
                     value={formData?.myMusicFour}
-                    name="myMusic"
+                    name="myMusicFour"
                     type="URL"
                     placeholder="Song 4"
                     onChange={handleChange}
