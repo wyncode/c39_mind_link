@@ -29,6 +29,8 @@ export const AppContextProvider = ({ children }) => {
           setCurrentUser(data);
         })
         .catch((error) => {
+          console.log('here');
+          console.log(error);
           swal(`Oops!`, error.toString());
         });
     }

@@ -23,7 +23,7 @@ const Navbar = () => {
         url: '/api/users/logout',
         withCredentials: true
       });
-      sessionStorage.removeItem('users');
+      sessionStorage.removeItem('user');
       setCurrentUser(null);
       swal(response.data.message, 'You have signed out!', {
         icon: 'success'
