@@ -24,16 +24,10 @@
   margin-bottom: 3rem;
   padding: 2rem;
   border: 4px white dotted;
-  /* flex-direction: column; */
 }
-
-/* #listTextContainer {
-  border: 2px white dashed;
-} */
 
 .listImage {
   width: 40rem;
-  /* height: 40rem; */
 }
 
 .listText {
@@ -68,7 +62,7 @@
 }
 
 .sortButton {
-  width: 20rem;
+  width: 17rem;
   height: 3rem;
   padding: 2px;
   font-size: 18px;
@@ -77,4 +71,5 @@
   color: white;
   background-color: #00758f;
   border: none;
+  border-radius: 7px;
 }

@@ -9,7 +9,6 @@ import Navbar from '../NavBar/Navbar';
 
 const ProjectPageComps = () => {
   const [specificProject, setSpecificProject] = useState({});
-  // const [comments, setComments] = useState({});
 
   let { id } = useParams();
 
@@ -23,18 +22,6 @@ const ProjectPageComps = () => {
       }
     };
     fetchSpecificProjects();
-
-    // const fetchComments = async () => {
-    //   try {
-    //     const projectComments = await axios.get(
-    //       `/api/projects/project/${id}/comments`
-    //     );
-    //     setComments(projectComments.data);
-    //   } catch (e) {
-    //     console.log(e);
-    //   }
-    // };
-    // fetchComments();
   }, [id]);
 
   return (

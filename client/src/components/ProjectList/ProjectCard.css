@@ -18,13 +18,12 @@
   height: 333px;
   object-fit: cover;
   border-bottom: 3px solid #015e73;
-
 }
 
 #projectCardName {
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  margin: 7px 5px;
+  font-size: 24px;
+  margin: 23px 5px;
   font-weight: bolder;
 }
 #projectCardDesc {
@@ -42,5 +41,5 @@
 #projectCardLink {
   font-family: 'Raleway', sans-serif;
   margin: 7px 5px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }

@@ -19,9 +19,11 @@ const ProjectCard = ({ project }) => {
         </div>
         <div id="projectCardName">{project.projectName}</div>
         <div id="projectCardDesc">{project.projectDescription}</div>
-        <div id="projectCardOwner">
-          <Link to={`./profile/${project._id}`}>MindLink Owner</Link>
-        </div>
+        {/* <div id="projectCardOwner">
+          <Link to={`./profile/${project.mindlinkProfile}`}>
+            MindLink Owner
+          </Link>
+        </div> */}
         <div id="projectCardLink">
           <Link to={`./project-details/${project._id}`}>Project Details</Link>
         </div>

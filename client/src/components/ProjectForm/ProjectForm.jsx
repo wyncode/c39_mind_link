@@ -44,7 +44,6 @@ const ProjectForm = () => {
       setCollabFormData(emptyFormState);
       form.reset();
     } catch (error) {
-      console.log(collabFormData);
       console.log(error);
     } finally {
       setLoading(false);

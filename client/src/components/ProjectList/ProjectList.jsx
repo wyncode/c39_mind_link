@@ -24,7 +24,6 @@ const ProjectList = () => {
       b.projectName.localeCompare(a.projectName)
     );
     setProjects(array);
-    console.log('sorted 1', projects);
   };
 
   const sortStarted2 = () => {
@@ -32,7 +31,6 @@ const ProjectList = () => {
       a.projectName.localeCompare(b.projectName)
     );
     setProjects(array);
-    console.log('sorted 2', projects);
   };
 
   return (

@@ -40,7 +40,6 @@ exports.createCommentbyProject = async (req, res) => {
     project: req.params.id
   });
   try {
-    console.log('params', comment);
     comment.save();
     res.status(201).json(comment);
   } catch (e) {

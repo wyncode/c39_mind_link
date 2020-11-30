@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 #collabContainer1 {
+  background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
+  color: #ffffff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -18,14 +20,15 @@
   /* background-color: red; */
 }
 #collabInfo {
-  width: 25vw;
+  width: 17vw;
   margin-top: 3vw;
+  margin-right: 3vw;
   /* height: 350px; */
   /* background-color: magenta; */
 }
 #collabComments {
   margin-top: 3vw;
-  width: 65vw;
+  width: 63vw;
   /* height: 350px; */
   /* background-color: teal; */
 }
