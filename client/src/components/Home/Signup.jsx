@@ -25,7 +25,9 @@ const Signup = () => {
       console.log(response.data);
       history.push('/profile');
     } catch (error) {
-      swal('SignUp Error: ', error.toString());
+      swal('SignUp Error: ', error.toString(), {
+        icon: 'error'
+      });
     }
   };
 
