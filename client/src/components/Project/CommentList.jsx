@@ -21,7 +21,6 @@ const CommentList = ({ specProject }) => {
     };
     fetchComments();
   }, [comments, id]);
-  console.log('spr', specProject);
 
   return (
     <div>

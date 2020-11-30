@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 #collabContainer1 {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -8,6 +11,7 @@
   padding-top: 1rem;
 }
 #collabHeader {
+  margin-top: 50px;
   width: 100vw;
   height: 400px;
 

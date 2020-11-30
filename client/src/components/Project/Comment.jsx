@@ -14,7 +14,7 @@ const Comment = ({ comments }) => {
             />
           </div>
           <div>
-            <div id="commentFormContainer">Comment: {comments.comment}</div>
+            <div id="commentsFormContainer">Comment: {comments.comment}</div>
           </div>
         </div>
       </div>

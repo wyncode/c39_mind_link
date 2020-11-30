@@ -34,7 +34,6 @@ const ProjectList = () => {
     console.log('sorted 2', projects);
   };
 
-
   return (
     <div id="projectListContainer">
       <h2 id="plHeader">
@@ -77,7 +76,7 @@ const ProjectList = () => {
         {projects.map((project) => {
           return (
             <ProjectCard
-              key={projects._id}
+              key={projects.id}
               project={project}
               className="projectCards"
             />
