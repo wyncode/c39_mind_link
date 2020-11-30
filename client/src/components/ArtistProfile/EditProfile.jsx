@@ -171,9 +171,11 @@ const EditProfile = () => {
               </form>
             </li>
             <li>
-              <button type="submit" className="Resetbtn">
-                Reset Password
-              </button>
+              <Link to="/reset-password">
+                <button type="submit" className="Resetbtn">
+                  Reset Password
+                </button>
+              </Link>
             </li>
             <li>
               <button
