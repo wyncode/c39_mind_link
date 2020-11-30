@@ -48,12 +48,18 @@
 
 .musicarea {
   width: 40%;
-  height: 30vh;
+  height: 50vh;
   margin: 1vh 0vh 0vh 90vh;
   border: 2px solid black;
+  color: white;
+  background: rgb(5, 5, 63);
 }
 
 .songs {
+  margin: 4vh 0vh 1vh 0vh;
+}
+
+.theprojects {
   margin: 4vh 0vh 1vh 0vh;
 }
 
@@ -103,6 +109,8 @@
   width: 40%;
   height: 90%;
   margin: 4vh 0vh 0vh 10vh;
+  background: rgb(5, 5, 63);
+  color: white;
 }
 
 .player {
