@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .createPojectContainer {
   background: linear-gradient(180deg, #00758f 0%, #3f008f 100%);
 }
@@ -8,15 +10,15 @@
   justify-content: center;
 }
 
-.Form {
+.ProjectForm {
   background: #0f3460;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   width: 100%;
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 32px 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
@@ -27,19 +29,22 @@
   font-size: 20px;
   font-weight: 400;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .FormLabel {
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   font-size: 14px;
   color: #fff;
+  font-family: 'Raleway', sans-serif;
 }
 
 .FormInput {
-  /* padding: 16px 16px; */
+  padding: 16px 16px;
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .FormButton {
@@ -48,8 +53,9 @@
   border: none;
   border-radius: 4px;
   color: #fff;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
+  font-family: 'Raleway', sans-serif;
 }
 
 .Text {
@@ -57,4 +63,5 @@
   margin-top: 24px;
   color: #fff;
   font-size: 14px;
+  font-family: 'Raleway', sans-serif;
 }

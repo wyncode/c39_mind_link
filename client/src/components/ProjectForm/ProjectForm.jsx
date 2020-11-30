@@ -56,13 +56,18 @@ const ProjectForm = () => {
       <Navbar />
       <div className="createPojectContainer">
         <div className="FormContent">
-          <form className="Form" action="#" onSubmit={handleSubmit}>
+          <form
+            style={{ width: '81%' }}
+            className="ProjectForm"
+            action="#"
+            onSubmit={handleSubmit}
+          >
             <h1 className="FormH1">Create Your Collab Project!</h1>
             <label className="FormLabel" htmlFor="for">
               Project Name
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -73,7 +78,7 @@ const ProjectForm = () => {
               Project Description
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -84,7 +89,7 @@ const ProjectForm = () => {
               Project Brief
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -117,7 +122,7 @@ const ProjectForm = () => {
               Talent Needed
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -156,7 +161,7 @@ const ProjectForm = () => {
               Mood
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -167,7 +172,7 @@ const ProjectForm = () => {
               Project Image
             </label>
             <input
-              style={{ width: '100%' }}
+              style={{ width: '77%', marginBottom: '15px' }}
               className="FormInput"
               required
               type="text"
@@ -175,6 +180,7 @@ const ProjectForm = () => {
               value={collabFormData.projectAvatar}
             />
             <button
+              style={{ width: '31%' }}
               className="FormButton"
               type="submit"
               onSubmit={handleSubmit}

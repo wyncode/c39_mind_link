@@ -35,7 +35,6 @@ const ProjectList = () => {
     console.log('sorted 2', projects);
   };
 
-
   return (
     <>
       <Navbar />
