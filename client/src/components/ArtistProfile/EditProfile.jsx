@@ -17,7 +17,7 @@ const EditProfile = () => {
     setPreview(URL.createObjectURL(e.target.files[0]));
     setImage(e.target.files[0]);
   };
-
+  //
   useEffect(() => {
     if (currentUser) {
       console.log(currentUser);

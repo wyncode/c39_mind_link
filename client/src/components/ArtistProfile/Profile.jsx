@@ -34,32 +34,64 @@ const Profile = () => {
           </div>
           <div className="myprojects">
             My Projects
-            <div className="theprojects"></div>
+            <div className="theprojects">
+              <a
+                href="https://farah-mindlink-api.herokuapp.com/project-details/5fbc0f77ac313e4764cccc9b
+"
+                target="_blank"
+              >
+                <button>Project One</button>
+              </a>
+            </div>
+            <div className="theprojects">
+              <a
+                href="https://farah-mindlink-api.herokuapp.com/project-details/5fc1c3d166145104bd9c3093
+"
+                target="_blank"
+              >
+                <button>Project Two</button>
+              </a>
+            </div>
           </div>
         </div>
         <div className="textarea">
           <div className="musicarea">
             <div>
+              {' '}
+              My Music
               <div className="songs">
-                {currentUser?.myMusicOne ? `${currentUser.myMusicOne} ` : ''}
+                <a
+                  href="https://www.youtube.com/watch?v=xpVfcZ0ZcFM"
+                  target="_blank"
+                >
+                  <button>Song One</button>
+                </a>
               </div>
               <div className="songs">
-                {currentUser?.myMusicTwo ? `${currentUser.myMusicTwo} ` : ''}
+                <a
+                  href="https://www.youtube.com/watch?v=xWggTb45brM"
+                  target="_blank"
+                >
+                  <button>Song Two</button>
+                </a>
               </div>
               <div className="songs">
-                {currentUser?.myMusicThree
-                  ? `${currentUser.myMusicThree} `
-                  : ''}
+                <a
+                  href="https://www.youtube.com/watch?v=uxpDa-c-4Mc"
+                  target="_blank"
+                >
+                  <button>Song Three</button>
+                </a>
               </div>
               <div className="songs">
-                {currentUser?.myMusicFour ? `${currentUser.myMusicFour} ` : ''}
+                <a
+                  href="https://www.youtube.com/watch?v=xpVfcZ0ZcFM"
+                  target="_blank"
+                >
+                  <button>Song Four</button>
+                </a>
               </div>
             </div>
-          </div>
-          <div className="comments">
-            Comments
-            <textarea className="profilecomments" type="text"></textarea>
-            <button className="submitcomment">submit</button>
           </div>
         </div>
       </div>
