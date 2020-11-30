@@ -65,8 +65,14 @@ exports.updateCurrentUser = async (req, res) => {
     'artistName',
     'socialMedia',
     'bio',
-    'currentProjects',
-    'myMusic',
+    'currentProjectOne',
+    'currentProjectTwo',
+    'currentProjectThree',
+    'currentProjectFour',
+    'myMusicOne',
+    'myMusicTwo',
+    'myMusicThree',
+    'myMusicFour',
     'avatar'
   ];
   const isValidOperation = updates.every((update) =>

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import NavBar from '../NavBar/Navbar';
 import './EditProfile.css';
 import { AppContext } from '../../context/AppContext';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -12,17 +12,49 @@ const EditProfile = () => {
   const history = useHistory();
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
+
   const handleImageSelect = (e) => {
     setPreview(URL.createObjectURL(e.target.files[0]));
     setImage(e.target.files[0]);
   };
 
   useEffect(() => {
-    if (currentUser) {
-      const { firstName, lastName, socialMedia, email } = currentUser;
-      setFormData({ ...formData, firstName, lastName, socialMedia, email });
+    if (currentUser && formData) {
+      const {
+        firstName,
+        lastName,
+        socialMedia,
+        email,
+        bio,
+        artistName,
+        currentProjectOne,
+        currentProjectTwo,
+        currentProjectThree,
+        currentProjectFour,
+        myMusicOne,
+        myMusicTwo,
+        myMusicThree,
+        myMusicFour
+      } = currentUser;
+      setFormData({
+        ...formData,
+        firstName,
+        lastName,
+        socialMedia,
+        email,
+        bio,
+        artistName,
+        currentProjectOne,
+        currentProjectTwo,
+        currentProjectThree,
+        currentProjectFour,
+        myMusicOne,
+        myMusicTwo,
+        myMusicThree,
+        myMusicFour
+      });
     }
-  }, []);
+  }, [currentUser, formData]);
 
   const handleAvatar = async (e) => {
     e.preventDefault();
@@ -58,7 +90,9 @@ const EditProfile = () => {
       console.log(response.data);
       history.push('/profile');
     } catch (error) {
-      swal('SignUp Error: ', error.toString());
+      console.log('running');
+      console.log(error);
+      swal('Ohoh! Something went wrong! ', error.toString());
     }
   };
 
@@ -121,7 +155,9 @@ const EditProfile = () => {
                   onChange={handleImageSelect}
                 />
                 <br />
-                <button type="submit">submit</button>
+                <button className="Resetbtn" type="submit">
+                  Update Avatar
+                </button>
               </form>
             </li>
             <li>
@@ -147,7 +183,9 @@ const EditProfile = () => {
             <button className="topbtns" onClick={handleEditProfile}>
               Save
             </button>
-            <button className="topbtnc">Cancel</button>
+            <Link to="/profile">
+              <button className="topbtnc">Cancel</button>
+            </Link>
           </div>
           <div className="ruly">
             <div className="myfname">
@@ -155,6 +193,7 @@ const EditProfile = () => {
             </div>
             <div>
               <input
+                value={formData?.artistName}
                 type="text"
                 placeholder="e.g. JohnRoss"
                 name="artistName"
@@ -193,6 +232,7 @@ const EditProfile = () => {
             </div>
             <div>
               <input
+                value={formData?.email}
                 type="text"
                 placeholder="e.g. JohnRoss@gmail.com"
                 name="email"
@@ -205,6 +245,7 @@ const EditProfile = () => {
             </div>
             <div>
               <input
+                value={formData.socialMedia}
                 type="text"
                 placeholder="@JohnRoss"
                 name="socialMedia"
@@ -217,9 +258,12 @@ const EditProfile = () => {
             </div>
             <div>
               <textarea
+                value={formData.bio}
                 type="text"
                 placeholder="Write about yourself"
                 name="bio"
+                className="aboutme"
+                maxLength="500"
                 onChange={handleChange}
               />
             </div>
@@ -230,6 +274,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    name="currentProjectOne"
+                    value={formData?.currentProjectOne}
                     type="URL"
                     placeholder="Project 1"
                     onChange={handleChange}
@@ -267,6 +313,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    value={formData?.myMusicOne}
+                    name="myMusic"
                     type="URL"
                     placeholder="Song 1"
                     onChange={handleChange}
@@ -275,6 +323,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    value={formData?.myMusicTwo}
+                    name="myMusic"
                     type="URL"
                     placeholder="Song 2"
                     onChange={handleChange}
@@ -283,6 +333,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    value={formData?.myMusicThree}
+                    name="myMusic"
                     type="URL"
                     placeholder="Song 3"
                     onChange={handleChange}
@@ -291,6 +343,8 @@ const EditProfile = () => {
                 <li className="plist">
                   {' '}
                   <input
+                    value={formData?.myMusicFour}
+                    name="myMusic"
                     type="URL"
                     placeholder="Song 4"
                     onChange={handleChange}
@@ -303,7 +357,9 @@ const EditProfile = () => {
           <button className="topbtns" onClick={handleEditProfile}>
             Save
           </button>
-          <button className="topbtnc">Cancel</button>
+          <Link to="/profile">
+            <button className="topbtnc">Cancel</button>
+          </Link>
         </div>
       </div>
     </>

@@ -48,7 +48,35 @@ const userSchema = new mongoose.Schema(
       type: String
     },
 
-    myMusic: {
+    myMusicOne: {
+      type: String
+    },
+
+    myMusicTwo: {
+      type: String
+    },
+
+    myMusicThree: {
+      type: String
+    },
+
+    myMusicFour: {
+      type: String
+    },
+
+    currentProjectOne: {
+      type: String
+    },
+
+    currentProjectTwo: {
+      type: String
+    },
+
+    currentProjectThree: {
+      type: String
+    },
+
+    currentProjectFour: {
       type: String
     },
 

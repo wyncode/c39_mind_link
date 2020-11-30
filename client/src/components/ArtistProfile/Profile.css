@@ -12,7 +12,9 @@
   margin: 0vh auto 0vh;
   height: 40vh;
   background: #0f3460;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 2px solid white;
 }
 
 .textarea {
@@ -48,6 +50,11 @@
   width: 40%;
   height: 30vh;
   margin: 1vh 0vh 0vh 90vh;
+  border: 2px solid black;
+}
+
+.songs {
+  margin: 4vh 0vh 1vh 0vh;
 }
 
 .comments {
@@ -59,12 +66,22 @@
   background: white;
 }
 
+.profilecomments {
+  border: 2px solid black;
+  width: 100%;
+  overflow-y: scroll;
+  background: white;
+  text-align: center;
+}
+
 .infoarea {
   width: 60%;
   height: 75%;
   float: right;
   margin: 10vh 0vh 0vh 0vh;
   background: rgb(5, 5, 63);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .userInfo {
@@ -91,4 +108,14 @@
 .player {
   width: 425px;
   height: 195px;
+}
+
+.submitcomment {
+  height: 4vh;
+  width: 8vh;
+  margin: 6vh 0vh 0vh 0vh;
+  color: white;
+  background: rgb(37, 184, 221);
+  border: 2px solid rgb(37, 184, 221);
+  border-radius: 5px;
 }
