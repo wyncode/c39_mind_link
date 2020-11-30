@@ -35,6 +35,30 @@ const ProjectInfo = ({ specProject }) => {
             {' '}
             {specProject.started}
           </p>
+          <p className="iBoxContent">Talent Needed:</p>
+          <p
+            className="iBoxContent"
+            style={{ fontSize: '20px', marginBottom: '15px' }}
+          >
+            {' '}
+            {specProject.talentNeeded}
+          </p>
+          <p className="iBoxContent">Genre:</p>
+          <p
+            className="iBoxContent"
+            style={{ fontSize: '20px', marginBottom: '15px' }}
+          >
+            {' '}
+            {specProject.genre}
+          </p>
+          <p className="iBoxContent">Mood:</p>
+          <p
+            className="iBoxContent"
+            style={{ fontSize: '20px', marginBottom: '15px' }}
+          >
+            {' '}
+            {specProject.mood}
+          </p>
         </div>
       </div>
     </div>
