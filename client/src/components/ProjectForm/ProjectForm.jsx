@@ -66,7 +66,7 @@ const ProjectForm = () => {
               Project Name
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"
@@ -77,7 +77,7 @@ const ProjectForm = () => {
               Project Description
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"
@@ -88,7 +88,7 @@ const ProjectForm = () => {
               Project Brief
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"
@@ -121,7 +121,7 @@ const ProjectForm = () => {
               Talent Needed
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"
@@ -160,7 +160,7 @@ const ProjectForm = () => {
               Mood
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"
@@ -171,7 +171,7 @@ const ProjectForm = () => {
               Project Image
             </label>
             <input
-              style={{ width: '77%', marginBottom: '15px' }}
+              style={{ width: '100%', margin: '0', padding: '2%' }}
               className="FormInput"
               required
               type="text"

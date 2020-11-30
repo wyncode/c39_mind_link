@@ -81,9 +81,20 @@ const Navbar = () => {
                   Edit Profile
                 </Link>
               ) : (
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                  How it Works
+                ''
+              )}
+            </li>
+            <li className="nav-item">
+              {currentUser ? (
+                <Link
+                  to="/create-project"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Create Project
                 </Link>
+              ) : (
+                ''
               )}
             </li>
             <li className="nav-item">
